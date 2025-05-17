@@ -10,7 +10,7 @@ import RemoveBabyDialog from './remove-baby-dialog'
 
 const BabyListItem = ({ baby }: { baby: Baby }) => {
   const router = useRouter()
-  const { setSelectedBaby, removeBaby } = useBabiesActions()
+  const { setSelectedBaby } = useBabiesActions()
 
   const handleSelectBaby = (baby: Baby) => {
     setSelectedBaby(baby)

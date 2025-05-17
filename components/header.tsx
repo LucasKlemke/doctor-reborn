@@ -1,7 +1,7 @@
 'use client'
 import React from 'react'
 import SignOutButton from './signout-button'
-import { Stethoscope, User } from 'lucide-react'
+import { User } from 'lucide-react'
 import { Button } from './ui/button'
 import Link from 'next/link'
 import { useSession } from 'next-auth/react'

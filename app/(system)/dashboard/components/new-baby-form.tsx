@@ -73,6 +73,7 @@ const NewBabyFormButton = () => {
       toast('Novo bebê adicionado com sucesso!')
     } catch (e) {
       toast('Erro ao adicionar bebê')
+      console.error(e)
     }
     setIsLoading(false)
   }

@@ -68,6 +68,7 @@ export default function SignInPage() {
       }
     } catch (error) {
       toast('Ocorreu um erro inesperado. Tente novamente mais tarde.')
+      console.error('Login error:', error)
     } finally {
       setIsLoading(false)
     }
