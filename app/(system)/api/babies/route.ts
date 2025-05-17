@@ -60,7 +60,6 @@ export async function POST(request: Request) {
     }
 
     const newBaby = await createBaby(data)
-    console.log('Novo bebê criado:', newBaby)
 
     return NextResponse.json(newBaby, { status: 201 })
   } catch (error) {

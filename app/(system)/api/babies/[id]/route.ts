@@ -1,8 +1,10 @@
-import { NextResponse } from 'next/server'
+import { NextRequest, NextResponse } from 'next/server'
 import { getServerSession } from 'next-auth'
+import { User } from '@prisma/client'
+import { deleteBaby, updateBaby } from '@/prisma/queries'
 
 // GET /api/babies/[id] - Obter um bebê específico
-export async function GET(request: Request, { params }: { params: { id: string } }) {
+export async function GET(request: NextRequest, { params }: { params: { id: string } }) {
   try {
     const session = await getServerSession()
 
@@ -10,7 +12,7 @@ export async function GET(request: Request, { params }: { params: { id: string }
       return NextResponse.json({ error: 'Não autorizado' }, { status: 401 })
     }
 
-    const id = params.id
+    const { id } = params
 
     // Aqui você buscaria o bebê do banco de dados
     // const baby = await db.query...
@@ -39,15 +41,14 @@ export async function GET(request: Request, { params }: { params: { id: string }
 }
 
 // PUT /api/babies/[id] - Atualizar um bebê
-export async function PUT(request: Request, { params }: { params: { id: string } }) {
+export async function PUT(request: NextRequest, { params }: { params: { id: string } }) {
   try {
     const session = await getServerSession()
+    const { id } = await params
 
     if (!session || !session.user) {
       return NextResponse.json({ error: 'Não autorizado' }, { status: 401 })
     }
-
-    const id = params.id
     const data = await request.json()
 
     // Validação básica
@@ -58,27 +59,10 @@ export async function PUT(request: Request, { params }: { params: { id: string }
       )
     }
 
-    // Aqui você verificaria se o bebê existe e pertence ao usuário
-    // const existingBaby = await db.query...
+    const updatedBaby = await updateBaby(id, data)
 
-    // Simulando verificação
-    const existingBaby = {
-      id,
-      userId: session.user.id,
-    }
-
-    if (existingBaby.userId !== session.user.id) {
+    if (updatedBaby.userId !== session.user.id) {
       return NextResponse.json({ error: 'Não autorizado' }, { status: 403 })
-    }
-
-    // Aqui você atualizaria o bebê no banco de dados
-    // const updatedBaby = await db.update...
-
-    // Simulando resposta
-    const updatedBaby = {
-      id,
-      ...data,
-      userId: session.user.id,
     }
 
     return NextResponse.json(updatedBaby)
@@ -89,35 +73,20 @@ export async function PUT(request: Request, { params }: { params: { id: string }
 }
 
 // DELETE /api/babies/[id] - Excluir um bebê
-export async function DELETE(request: Request, { params }: { params: { id: string } }) {
+export async function DELETE(request: NextRequest, { params }: { params: { id: string } }) {
   try {
-    const session = await getServerSession(authOptions)
+    const session = await getServerSession()
+    const { id } = await params
 
     if (!session || !session.user) {
       return NextResponse.json({ error: 'Não autorizado' }, { status: 401 })
     }
 
-    const id = params.id
-
-    // Aqui você verificaria se o bebê existe e pertence ao usuário
-    // const existingBaby = await db.query...
-
-    // Simulando verificação
-    const existingBaby = {
-      id,
-      userId: session.user.id,
-    }
-
-    if (existingBaby.userId !== session.user.id) {
-      return NextResponse.json({ error: 'Não autorizado' }, { status: 403 })
-    }
-
-    // Aqui você excluiria o bebê do banco de dados
-    // await db.delete...
+    await deleteBaby(id)
 
     return NextResponse.json({ success: true })
   } catch (error) {
-    console.error(`Erro ao excluir bebê ${params.id}:`, error)
+    console.error(`Erro ao excluir bebê :`, error)
     return NextResponse.json({ error: 'Erro ao excluir bebê' }, { status: 500 })
   }
 }

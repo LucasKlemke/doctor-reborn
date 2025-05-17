@@ -7,7 +7,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from '@/components/ui/dialog'
-import { Plus } from 'lucide-react'
+import { Pencil, Plus } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { useBabiesActions } from '@/stores/baby'
 import {
@@ -31,6 +31,7 @@ import {
   FormLabel,
   FormMessage,
 } from '@/components/ui/form'
+import { Baby } from '@prisma/client'
 
 export const formSchema = z.object({
   name: z.string().min(2, { message: 'Nome deve ter pelo menos 2 caracteres.' }),
@@ -46,28 +47,30 @@ export const formSchema = z.object({
   notes: z.string().optional(),
 })
 
-const NewBabyFormButton = () => {
+const EditBabyFormButton = ({ baby }: { baby: Baby }) => {
   // 1. Define your form.
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      name: '',
-      birthDate: '',
-      gender: undefined,
-      brand: '',
-      weight: '',
-      height: '',
-      notes: '',
+      name: baby.name,
+      birthDate: baby.birthDate ? new Date(baby.birthDate).toISOString().slice(0, 10) : '',
+      gender: baby.gender,
+      brand: baby.brand ?? '',
+      weight: `${baby.weight}`,
+      height: `${baby.height}`,
+      notes: baby.notes ?? '',
     },
   })
-  const { addBaby } = useBabiesActions()
+  const { updateBaby } = useBabiesActions()
   const [isLoading, setIsLoading] = useState(false)
 
   // 2. Define a submit handler.
   async function onSubmit(values: z.infer<typeof formSchema>) {
     setIsLoading(true)
+    console.log('values', values)
     try {
-      await addBaby(values)
+      values.id = baby.id
+      await updateBaby(baby.id, values)
       setOpen(false)
       toast('Novo bebê adicionado com sucesso!')
     } catch (e) {
@@ -81,16 +84,15 @@ const NewBabyFormButton = () => {
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger onClick={() => setOpen(true)} asChild>
-        <Button className="gap-2">
-          <Plus className="h-4 w-4" />
-          Adicionar bebê
+        <Button className="gap-2" size={'icon'}>
+          <Pencil className="h-4 w-4" />
         </Button>
       </DialogTrigger>
       <DialogContent>
         <DialogHeader>
-          <DialogTitle>Adicionar novo bebê</DialogTitle>
+          <DialogTitle>Atualizar bebê</DialogTitle>
           <DialogDescription>
-            Preencha as informações do bebê para adicioná-lo à sua lista.
+            Preencha as informações do bebê para atualizar o registro.
           </DialogDescription>
         </DialogHeader>
         <Form {...form}>
@@ -198,7 +200,7 @@ const NewBabyFormButton = () => {
               )}
             />
             <Button disabled={isLoading} type="submit">
-              {isLoading ? 'Adicionando...' : 'Adicionar bebê'}
+              {isLoading ? 'Atualizando...' : 'Atualizar bebê'}
             </Button>
           </form>
         </Form>
@@ -207,4 +209,4 @@ const NewBabyFormButton = () => {
   )
 }
 
-export default NewBabyFormButton
+export default EditBabyFormButton

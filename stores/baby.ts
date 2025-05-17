@@ -8,9 +8,17 @@ export type State = {
 
 export type Actions = {
   setBabies(state: Baby[] | []): void
-  addBaby: (newBaby: Baby) => void
+  addBaby: (values: {
+    name: string
+    height: string
+    weight: string
+    birthDate: string
+    gender: 'OTHER' | 'MALE' | 'FEMALE'
+    brand?: string | undefined
+    notes?: string | undefined
+  }) => void
   removeBaby: (babyId: string) => void
-  //   updateAnswer: (content: MessageContent, messageId: string) => Promise<void>
+  updateBaby: (updatedBaby: Baby, babyId: string) => Promise<void>
 }
 
 const useBabyStore = create<State>((set) => ({
@@ -20,41 +28,52 @@ const useBabyStore = create<State>((set) => ({
       set({
         babies: state,
       }),
-    addBaby: (newBaby) => {
-      set((state) => ({
-        babies: state.babies ? [...state.babies, newBaby] : [newBaby],
-      }))
+    addBaby: async (values) => {
+      try {
+        const response = await fetch('/api/babies', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(values),
+        })
+
+        const newBaby = await response.json()
+
+        set((state) => ({
+          babies: state.babies ? [...state.babies, newBaby] : [newBaby],
+        }))
+      } catch (e) {
+        throw new Error('Failed to add baby')
+      }
     },
     removeBaby: async (babyId) => {
       // Remove the answer from the state
-      set((state) => ({
-        babies: state.babies ? state.babies.filter((baby) => baby.id !== babyId) : [],
-      }))
+      try {
+        await fetch(`/api/babies/${babyId}`, {
+          method: 'DELETE',
+        })
 
-      // Then perform the side-effect of removing the answer from the database
-      //   try {
-      //     await deleteMessage(answerId)
-      //   } catch (error) {
-      //     console.error('Failed to remove answer:', error)
-      //   }
+        set((state) => ({
+          babies: state.babies ? state.babies.filter((baby) => baby.id !== babyId) : [],
+        }))
+      } catch (e) {
+        throw new Error('Failed to remove baby')
+      }
     },
-    // updateAnswer: async (content, messageId) => {
-    //   // Then perform the side-effect of updating the database
-    //   try {
-    //     await updateMessage(content, messageId)
-    //   } catch (error) {
-    //     throw new Error('Failed to update answer')
-    //   }
+    updateBaby: async (updatedBaby, babyId) => {
+      try {
+        const newBabyValue = await fetch(`/api/babies/${babyId}`, {
+          method: 'PUT',
+        })
 
-    //   // Update the state first
-    //   set((state) => ({
-    //     answers: state.answers
-    //       ? state.answers.map((answer) =>
-    //           answer.id === messageId ? { ...answer, content: JSON.stringify(content) } : answer
-    //         )
-    //       : [],
-    //   }))
-    // },
+        set((state) => ({
+          babies: state.babies
+            ? state.babies.map((baby) => (baby.id === babyId ? { ...baby, ...newBabyValue } : baby))
+            : [],
+        }))
+      } catch (e) {
+        throw new Error('Failed to remove baby')
+      }
+    },
   },
 }))
 
