@@ -67,14 +67,12 @@ const EditBabyFormButton = ({ baby }: { baby: Baby }) => {
   // 2. Define a submit handler.
   async function onSubmit(values: z.infer<typeof formSchema>) {
     setIsLoading(true)
-    console.log('values', values)
     try {
-      values.id = baby.id
       await updateBaby(baby.id, values)
       setOpen(false)
-      toast('Novo bebê adicionado com sucesso!')
+      toast('Bebê atualizado com sucesso!')
     } catch (e) {
-      toast('Erro ao adicionar bebê')
+      toast('Erro ao atualizar bebê')
     }
     setIsLoading(false)
   }

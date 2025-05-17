@@ -25,6 +25,8 @@ export const getBaby = (id: string) => prisma.baby.findUnique({ where: { id } })
 
 export const getBabiesByUserId = (userId: string) => prisma.baby.findMany({ where: { userId } })
 
+export const getBabyById = (id: string) => prisma.baby.findUnique({ where: { id } })
+
 export const updateBaby = (
   id: string,
   data: Partial<Omit<Baby, 'id' | 'createdAt' | 'updatedAt'>>

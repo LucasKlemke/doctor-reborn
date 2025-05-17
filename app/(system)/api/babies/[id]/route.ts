@@ -1,7 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { getServerSession } from 'next-auth'
-import { User } from '@prisma/client'
-import { deleteBaby, updateBaby } from '@/prisma/queries'
+import { deleteBaby, getBabyById, updateBaby } from '@/prisma/queries'
 
 // GET /api/babies/[id] - Obter um bebê específico
 export async function GET(request: NextRequest, { params }: { params: { id: string } }) {
@@ -11,27 +10,8 @@ export async function GET(request: NextRequest, { params }: { params: { id: stri
     if (!session || !session.user) {
       return NextResponse.json({ error: 'Não autorizado' }, { status: 401 })
     }
-
     const { id } = params
-
-    // Aqui você buscaria o bebê do banco de dados
-    // const baby = await db.query...
-
-    // Simulando dados para exemplo
-    const baby = {
-      id,
-      name: 'João Silva',
-      birthDate: '2023-05-10',
-      gender: 'male',
-      weight: '3.8',
-      height: '52',
-      userId: session.user.id,
-    }
-
-    // Verificar se o bebê pertence ao usuário logado
-    if (baby.userId !== session.user.id) {
-      return NextResponse.json({ error: 'Não autorizado' }, { status: 403 })
-    }
+    const baby = await getBabyById(id)
 
     return NextResponse.json(baby)
   } catch (error) {
@@ -49,8 +29,13 @@ export async function PUT(request: NextRequest, { params }: { params: { id: stri
     if (!session || !session.user) {
       return NextResponse.json({ error: 'Não autorizado' }, { status: 401 })
     }
-    const data = await request.json()
 
+    const data = await request.json()
+    data.weight = parseFloat(data.weight) // Converte o peso para float
+    data.height = parseFloat(data.height) // Converte a altura para float
+    if (typeof data.birthDate === 'string') {
+      data.birthDate = new Date(data.birthDate)
+    }
     // Validação básica
     if (!data.name || !data.birthDate) {
       return NextResponse.json(
@@ -60,10 +45,6 @@ export async function PUT(request: NextRequest, { params }: { params: { id: stri
     }
 
     const updatedBaby = await updateBaby(id, data)
-
-    if (updatedBaby.userId !== session.user.id) {
-      return NextResponse.json({ error: 'Não autorizado' }, { status: 403 })
-    }
 
     return NextResponse.json(updatedBaby)
   } catch (error) {
