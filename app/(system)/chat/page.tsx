@@ -10,6 +10,7 @@ import { Card } from "@/components/ui/card"
 import { ArrowLeft, Bot, FileImage, Paperclip, Send, User, X } from "lucide-react"
 import Link from "next/link"
 import { Markdown } from "@/components/ui/markdown"
+import AuthGuard from "@/components/auth-guard"
 
 export default function Chat() {
   const { messages, input, handleInputChange, handleSubmit, isLoading } = useChat()
@@ -46,7 +47,8 @@ export default function Chat() {
   const fileNames = files ? Array.from(files).map((file) => file.name) : []
 
   return (
-    <div className="flex flex-col min-h-screen bg-gradient-to-b from-blue-50 to-white">
+    <AuthGuard>
+          <div className="flex flex-col min-h-screen bg-gradient-to-b from-blue-50 to-white">
       <header className="container mx-auto py-4 px-4 border-b border-gray-100">
         <div className="flex items-center justify-between">
           <Link
@@ -220,5 +222,7 @@ export default function Chat() {
         </div>
       </div>
     </div>
+     </AuthGuard>
+
   )
 }
