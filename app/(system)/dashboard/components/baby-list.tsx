@@ -1,4 +1,3 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import NewBabyFormButton from './new-baby-form'
 import { useBabies } from '@/stores/baby'
 import { BabyIcon } from 'lucide-react'
@@ -8,30 +7,25 @@ const BabyList = () => {
   const babies = useBabies()
 
   return (
-    <Card className="h-[calc(100vh-220px)] overflow-y-auto md:col-span-2">
-      <CardHeader className="flex flex-row items-center justify-between">
-        <div>
-          <CardTitle>Meus bebês</CardTitle>
-          <CardDescription>Gerencie as informações dos seus bebês</CardDescription>
-        </div>
+    <div className="h-[calc(100vh-220px)] overflow-y-auto md:col-span-2">
+      <div className="flex w-full items-center justify-end p-3">
         <NewBabyFormButton />
-      </CardHeader>
-      <CardContent>
-        {babies.length === 0 ? (
-          <div className="py-12 text-center">
-            <BabyIcon className="mx-auto mb-4 h-12 w-12 text-gray-300" />
-            <h3 className="text-lg font-medium text-gray-900">Nenhum bebê cadastrado</h3>
-            <p className="mt-1 text-gray-500">Adicione seu primeiro bebê para começar</p>
-          </div>
-        ) : (
-          <div className="space-y-4">
-            {babies.map((baby) => (
-              <BabyListItem key={baby.id} baby={baby} />
-            ))}
-          </div>
-        )}
-      </CardContent>
-    </Card>
+      </div>
+
+      {babies.length === 0 ? (
+        <div className="py-12 text-center">
+          <BabyIcon className="mx-auto mb-4 h-12 w-12 text-gray-300" />
+          <h3 className="text-lg font-medium text-gray-900">Nenhum bebê cadastrado</h3>
+          <p className="mt-1 text-gray-500">Adicione seu primeiro bebê para começar</p>
+        </div>
+      ) : (
+        <div className="space-y-4">
+          {babies.map((baby) => (
+            <BabyListItem key={baby.id} baby={baby} />
+          ))}
+        </div>
+      )}
+    </div>
   )
 }
 

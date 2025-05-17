@@ -64,7 +64,7 @@ export default function SignInPage() {
         toast('Email ou senha incorretos. Tente novamente.')
       } else {
         toast('Redirecionando para a página inicial...')
-        router.push('/dashbaord')
+        router.push('/dashboard')
       }
     } catch (error) {
       toast('Ocorreu um erro inesperado. Tente novamente mais tarde.')
@@ -77,14 +77,14 @@ export default function SignInPage() {
     <div className="flex min-h-screen items-center justify-center bg-gradient-to-b from-blue-50 to-white p-4">
       <div className="w-full max-w-md">
         <div className="mb-6 flex justify-center">
-          <div className="rounded-full bg-blue-600 p-3">
+          <div className="bg-primary rounded-full p-3">
             <Stethoscope className="h-8 w-8 text-white" />
           </div>
         </div>
 
         <Card className="border-blue-100 shadow-lg">
           <CardHeader className="space-y-1 text-center">
-            <CardTitle className="text-2xl font-bold text-blue-900">Entrar</CardTitle>
+            <CardTitle className="text-chart-1 text-2xl font-bold">Entrar</CardTitle>
             <CardDescription>
               Entre com suas credenciais para acessar o Doctor Reborn
             </CardDescription>
@@ -120,11 +120,7 @@ export default function SignInPage() {
                 {errors.password && <p className="text-sm text-red-500">{errors.password}</p>}
               </div>
 
-              <Button
-                type="submit"
-                className="w-full bg-blue-600 hover:bg-blue-700"
-                disabled={isLoading}
-              >
+              <Button type="submit" className="w-full" disabled={isLoading}>
                 {isLoading ? (
                   <>
                     <Loader2 className="mr-2 h-4 w-4 animate-spin" />
@@ -143,13 +139,13 @@ export default function SignInPage() {
           <CardFooter className="flex flex-col space-y-4 border-t pt-4">
             <div className="text-center text-sm">
               <span className="text-gray-500">Não tem uma conta? </span>
-              <Link href="/register" className="font-medium text-blue-600 hover:underline">
+              <Link href="/register" className="text-primary font-medium hover:underline">
                 Cadastre-se
               </Link>
             </div>
             <Link
               href="/"
-              className="mb-2 inline-flex items-center text-sm text-blue-600 transition-colors hover:text-blue-800"
+              className="text-primary mb-2 inline-flex items-center text-sm transition-colors"
             >
               <ArrowLeft className="mr-1 h-4 w-4" />
               <span>Voltar para página inicial</span>

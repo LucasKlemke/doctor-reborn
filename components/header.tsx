@@ -11,16 +11,16 @@ const Header = () => {
   console.log(session?.user?.name)
 
   return (
-    <header className="container mx-auto flex items-center justify-between py-6">
+    <header className="bg-sidebar flex w-full items-center justify-between border-b px-5 py-6">
       <div className="flex items-center gap-2">
-        <Stethoscope className="h-8 w-8 text-blue-600" />
-        <h1 className="text-2xl font-bold text-blue-900">Doctor Reborn</h1>
+        {/* svg logo_header */}
+        <img src="/logo_header.svg" alt="Doctor Reborn Logo" className='w-60'  />
       </div>
       {status !== 'loading' && (
         <>
           {session?.user?.email ? (
             <div className="flex items-center gap-3">
-              <p className="flex items-center text-md text-gray-600">
+              <p className="text-md flex items-center text-gray-600">
                 <User className="h-4 w-4" />
                 Olá, <strong className="ml-1">{session?.user?.name}</strong>
               </p>

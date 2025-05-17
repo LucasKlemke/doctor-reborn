@@ -146,14 +146,14 @@ export default function RegisterPage() {
     <div className="flex min-h-screen items-center justify-center bg-gradient-to-b from-blue-50 to-white p-4">
       <div className="w-full max-w-md">
         <div className="mb-6 flex justify-center">
-          <div className="rounded-full bg-blue-600 p-3">
+          <div className="bg-primary rounded-full p-3">
             <Stethoscope className="h-8 w-8 text-white" />
           </div>
         </div>
 
         <Card className="border-blue-100 shadow-lg">
           <CardHeader className="space-y-1 text-center">
-            <CardTitle className="text-2xl font-bold text-blue-900">Criar conta</CardTitle>
+            <CardTitle className="text-primary text-2xl font-bold">Criar conta</CardTitle>
             <CardDescription>
               Preencha os dados abaixo para se cadastrar no Doctor Reborn
             </CardDescription>
@@ -246,11 +246,7 @@ export default function RegisterPage() {
                 )}
               </div>
 
-              <Button
-                type="submit"
-                className="w-full bg-blue-600 hover:bg-blue-700"
-                disabled={isLoading}
-              >
+              <Button type="submit" className="bg-primary w-full" disabled={isLoading}>
                 {isLoading ? (
                   <>
                     <Loader2 className="mr-2 h-4 w-4 animate-spin" />
@@ -269,13 +265,13 @@ export default function RegisterPage() {
           <CardFooter className="flex flex-col space-y-4 border-t pt-4">
             <div className="text-center text-sm">
               <span className="text-gray-500">Já tem uma conta? </span>
-              <Link href="/signin" className="font-medium text-blue-600 hover:underline">
+              <Link href="/signin" className="text-primary font-medium hover:underline">
                 Faça login
               </Link>
             </div>
             <Link
               href="/"
-              className="mb-2 inline-flex items-center text-sm text-blue-600 transition-colors hover:text-blue-800"
+              className="text-primary mb-2 inline-flex items-center text-sm transition-colors"
             >
               <ArrowLeft className="mr-1 h-4 w-4" />
               <span>Voltar para página inicial</span>

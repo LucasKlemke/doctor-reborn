@@ -68,7 +68,7 @@ const EditBabyFormButton = ({ baby }: { baby: Baby }) => {
   async function onSubmit(values: z.infer<typeof formSchema>) {
     setIsLoading(true)
     try {
-      await updateBaby(baby.id, values)
+      await updateBaby(baby.id, values as unknown as Baby)
       setOpen(false)
       toast('Bebê atualizado com sucesso!')
     } catch (e) {
@@ -82,7 +82,7 @@ const EditBabyFormButton = ({ baby }: { baby: Baby }) => {
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger onClick={() => setOpen(true)} asChild>
-        <Button className="gap-2" size={'icon'}>
+        <Button variant="secondary" className="gap-2" size={'icon'}>
           <Pencil className="h-4 w-4" />
         </Button>
       </DialogTrigger>

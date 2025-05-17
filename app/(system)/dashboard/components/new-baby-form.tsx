@@ -88,7 +88,7 @@ const NewBabyFormButton = () => {
       </DialogTrigger>
       <DialogContent>
         <DialogHeader>
-          <DialogTitle>Adicionar novo bebê</DialogTitle>
+          <DialogTitle>Adicionar novo dependente</DialogTitle>
           <DialogDescription>
             Preencha as informações do bebê para adicioná-lo à sua lista.
           </DialogDescription>
