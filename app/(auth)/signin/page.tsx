@@ -16,7 +16,7 @@ import {
   CardTitle,
 } from '@/components/ui/card'
 import { Label } from '@/components/ui/label'
-import { Stethoscope, Loader2, ArrowRight } from 'lucide-react'
+import { Stethoscope, Loader2, ArrowRight, ArrowLeft } from 'lucide-react'
 import Link from 'next/link'
 import { toast } from 'sonner'
 
@@ -64,7 +64,7 @@ export default function SignInPage() {
         toast('Email ou senha incorretos. Tente novamente.')
       } else {
         toast('Redirecionando para a página inicial...')
-        router.push('/')
+        router.push('/start')
       }
     } catch (error) {
       toast('Ocorreu um erro inesperado. Tente novamente mais tarde.')
@@ -108,9 +108,6 @@ export default function SignInPage() {
               <div className="space-y-2">
                 <div className="flex items-center justify-between">
                   <Label htmlFor="password">Senha</Label>
-                  <Link href="/recuperar-senha" className="text-xs text-blue-600 hover:underline">
-                    Esqueceu a senha?
-                  </Link>
                 </div>
                 <Input
                   id="password"
@@ -150,6 +147,13 @@ export default function SignInPage() {
                 Cadastre-se
               </Link>
             </div>
+            <Link
+              href="/"
+              className="mb-2 inline-flex items-center text-sm text-blue-600 transition-colors hover:text-blue-800"
+            >
+              <ArrowLeft className="mr-1 h-4 w-4" />
+              <span>Voltar para página inicial</span>
+            </Link>
           </CardFooter>
         </Card>
       </div>

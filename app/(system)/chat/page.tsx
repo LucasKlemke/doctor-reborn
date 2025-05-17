@@ -73,8 +73,7 @@ export default function Chat() {
                 </h2>
                 <p className="max-w-md">
                   Descreva os sintomas do bebê e envie fotos relevantes para obter um diagnóstico
-                  preliminar. Lembre-se que este é apenas um auxílio e não substitui a consulta
-                  médica.
+                  preliminar.
                 </p>
               </div>
             ) : (

@@ -22,7 +22,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select'
-import { Stethoscope, Loader2, UserPlus } from 'lucide-react'
+import { Stethoscope, Loader2, UserPlus, ArrowLeft } from 'lucide-react'
 import Link from 'next/link'
 import { toast } from 'sonner'
 
@@ -273,12 +273,13 @@ export default function RegisterPage() {
                 Faça login
               </Link>
             </div>
-
-            <div className="text-center">
-              <Link href="/" className="text-sm text-gray-500 hover:text-blue-600">
-                Voltar para página inicial
-              </Link>
-            </div>
+            <Link
+              href="/"
+              className="mb-2 inline-flex items-center text-sm text-blue-600 transition-colors hover:text-blue-800"
+            >
+              <ArrowLeft className="mr-1 h-4 w-4" />
+              <span>Voltar para página inicial</span>
+            </Link>
           </CardFooter>
         </Card>
       </div>
