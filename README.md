@@ -1,4 +1,3 @@
-
 # 🧸 RebornMed — Diagnóstico IA para Bebês Reborn
 
 > **Aviso Legal:** Este projeto foi criado para fins de demonstração e não deve ser utilizado como fonte médica real. Bebês Reborn não necessitam de atendimento clínico. Ainda.
@@ -9,7 +8,7 @@
 
 O **RebornMed** é uma plataforma de diagnóstico médico assistido por IA, dedicada exclusivamente à saúde de Bebês Reborn. Com o avanço das leis que proíbem o atendimento de bonecos no sistema público de saúde (Lei nº 14.785), nasceu a necessidade de um sistema ético, preciso e digital para acolher pais de prole neonatamodular plástica.
 
-Através de uma interface simples, o usuário pode subir uma imagem do seu bebê e receber um diagnóstico estético imediato — com inteligência artificial no plano básico, ou *inteligência humana* (um link pro WhatsApp) no plano Pro.
+Através de uma interface simples, o usuário pode subir uma imagem do seu bebê e receber um diagnóstico estético imediato — com inteligência artificial no plano básico, ou _inteligência humana_ (um link pro WhatsApp) no plano Pro.
 
 ---
 
@@ -22,7 +21,7 @@ Através de uma interface simples, o usuário pode subir uma imagem do seu bebê
 - **RF05**: Sistema de planos: gratuito (IA) e pago (HI).
 - **RF06**: Registro de histórico de diagnósticos.
 - **RF07**: Tela de loading com frases técnicas rebornológicas.
-- **RF08**: Página de erro caso o bebê enviado seja *humano real*.
+- **RF08**: Página de erro caso o bebê enviado seja _humano real_.
 
 ---
 
@@ -40,9 +39,9 @@ Através de uma interface simples, o usuário pode subir uma imagem do seu bebê
 
 ## 🧱 Stack Utilizada
 
-- [x] **Next.js**  
-- [x] **TailwindCSS + Shadcn UI**  
-- [x] **TypeScript**  
+- [x] **Next.js**
+- [x] **TailwindCSS + Shadcn UI**
+- [x] **TypeScript**
 - [x] **Zustand** (caso desejem persistência global do estado clínico)
 - [x] **IA ou Array de Frases** depreciativas (conforme plano)
 - [x] **WhatsApp API** (redirecionamento para plano Pro)
@@ -52,24 +51,28 @@ Através de uma interface simples, o usuário pode subir uma imagem do seu bebê
 ## 🚀 Como Rodar o Projeto
 
 1. **Clone o repositório**
+
    ```bash
    git clone https://github.com/seuusuario/rebornmed.git
    cd rebornmed
    ```
 
 2. **Instale as dependências**
+
    ```bash
    pnpm install
    ```
 
 3. **Configure o arquivo `.env.local`**
    Crie o arquivo com as variáveis necessárias:
+
    ```env
    NEXT_PUBLIC_SITE_URL=http://localhost:3000
    OPENAI_API_KEY=sua-chave-aqui (caso use IA real)
    ```
 
 4. **Rode o projeto**
+
    ```bash
    pnpm dev
    ```
@@ -92,4 +95,4 @@ Através de uma interface simples, o usuário pode subir uma imagem do seu bebê
 
 ## 🤡 Por que isso é gloriosamente inútil?
 
-Porque ninguém *em sã consciência* gastaria dinheiro com diagnósticos médicos para um objeto de vinil.
+Porque ninguém _em sã consciência_ gastaria dinheiro com diagnósticos médicos para um objeto de vinil.

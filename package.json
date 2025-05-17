@@ -3,10 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
-    "build": "next build",
+    "dev": "next dev --turbopack prettier --write .",
+    "build": "next build prettier --write .",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "format": "prettier --write ."
   },
   "dependencies": {
     "@ai-sdk/openai": "^1.3.22",
@@ -41,6 +42,9 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "15.3.2",
+    "eslint-config-prettier": "^10.1.5",
+    "prettier": "^3.5.3",
+    "prettier-plugin-tailwindcss": "^0.6.11",
     "tailwindcss": "^4",
     "tw-animate-css": "^1.3.0",
     "typescript": "^5"

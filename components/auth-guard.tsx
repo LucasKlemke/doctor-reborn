@@ -1,8 +1,8 @@
 'use client'
 
-import { useSession } from "next-auth/react"
-import { useRouter } from "next/navigation"
-import { ReactNode, useEffect } from "react"
+import { useSession } from 'next-auth/react'
+import { useRouter } from 'next/navigation'
+import { ReactNode, useEffect } from 'react'
 
 type AuthGuardProps = {
   children: ReactNode

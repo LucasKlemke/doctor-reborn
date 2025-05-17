@@ -1,17 +1,30 @@
-"use client"
+'use client'
 
-import type React from "react"
+import type React from 'react'
 
-import { useState } from "react"
-import { useRouter } from "next/navigation"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { Label } from "@/components/ui/label"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Stethoscope, Loader2, UserPlus } from "lucide-react"
-import Link from "next/link"
-import { toast } from "sonner"
+import { useState } from 'react'
+import { useRouter } from 'next/navigation'
+import { Button } from '@/components/ui/button'
+import { Input } from '@/components/ui/input'
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card'
+import { Label } from '@/components/ui/label'
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select'
+import { Stethoscope, Loader2, UserPlus } from 'lucide-react'
+import Link from 'next/link'
+import { toast } from 'sonner'
 
 type FormData = {
   name: string
@@ -33,12 +46,12 @@ type FormErrors = {
 
 export default function RegisterPage() {
   const [form, setForm] = useState<FormData>({
-    name: "",
-    email: "",
-    age: "",
-    role: "PARENT",
-    password: "",
-    confirmPassword: "",
+    name: '',
+    email: '',
+    age: '',
+    role: 'PARENT',
+    password: '',
+    confirmPassword: '',
   })
 
   const [errors, setErrors] = useState<FormErrors>({})
@@ -58,43 +71,43 @@ export default function RegisterPage() {
 
     // Name validation
     if (!form.name.trim()) {
-      newErrors.name = "Nome é obrigatório"
+      newErrors.name = 'Nome é obrigatório'
     }
 
     // Email validation
     if (!form.email) {
-      newErrors.email = "Email é obrigatório"
+      newErrors.email = 'Email é obrigatório'
     } else if (!/\S+@\S+\.\S+/.test(form.email)) {
-      newErrors.email = "Email inválido"
+      newErrors.email = 'Email inválido'
     }
 
     // Age validation
     if (!form.age) {
-      newErrors.age = "Idade é obrigatória"
+      newErrors.age = 'Idade é obrigatória'
     } else {
       const ageNum = Number(form.age)
       if (isNaN(ageNum) || ageNum <= 0 || ageNum > 120) {
-        newErrors.age = "Idade inválida"
+        newErrors.age = 'Idade inválida'
       }
     }
 
     // Role validation
     if (!form.role) {
-      newErrors.role = "Selecione uma opção"
+      newErrors.role = 'Selecione uma opção'
     }
 
     // Password validation
     if (!form.password) {
-      newErrors.password = "Senha é obrigatória"
+      newErrors.password = 'Senha é obrigatória'
     } else if (form.password.length < 6) {
-      newErrors.password = "Senha deve ter pelo menos 6 caracteres"
+      newErrors.password = 'Senha deve ter pelo menos 6 caracteres'
     }
 
     // Confirm password validation
     if (!form.confirmPassword) {
-      newErrors.confirmPassword = "Confirme sua senha"
+      newErrors.confirmPassword = 'Confirme sua senha'
     } else if (form.password !== form.confirmPassword) {
-      newErrors.confirmPassword = "As senhas não coincidem"
+      newErrors.confirmPassword = 'As senhas não coincidem'
     }
 
     setErrors(newErrors)
@@ -109,31 +122,31 @@ export default function RegisterPage() {
     setIsLoading(true)
 
     try {
-      const res = await fetch("/api/register", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
+      const res = await fetch('/api/register', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ ...form, age: Number(form.age) }),
       })
 
       if (res.ok) {
-        toast("Você já pode fazer login com suas credenciais.")
-        router.push("/signin")
+        toast('Você já pode fazer login com suas credenciais.')
+        router.push('/signin')
       } else {
-        const data = await res.json().catch(() => ({ error: "Erro desconhecido" }))
-        toast("Não foi possível completar o cadastro. Tente novamente.")
+        const data = await res.json().catch(() => ({ error: 'Erro desconhecido' }))
+        toast('Não foi possível completar o cadastro. Tente novamente.')
       }
     } catch (error) {
-      toast("Ocorreu um erro inesperado. Tente novamente mais tarde.")
+      toast('Ocorreu um erro inesperado. Tente novamente mais tarde.')
     } finally {
       setIsLoading(false)
     }
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-blue-50 to-white p-4">
+    <div className="flex min-h-screen items-center justify-center bg-gradient-to-b from-blue-50 to-white p-4">
       <div className="w-full max-w-md">
-        <div className="flex justify-center mb-6">
-          <div className="bg-blue-600 p-3 rounded-full">
+        <div className="mb-6 flex justify-center">
+          <div className="rounded-full bg-blue-600 p-3">
             <Stethoscope className="h-8 w-8 text-white" />
           </div>
         </div>
@@ -141,7 +154,9 @@ export default function RegisterPage() {
         <Card className="border-blue-100 shadow-lg">
           <CardHeader className="space-y-1 text-center">
             <CardTitle className="text-2xl font-bold text-blue-900">Criar conta</CardTitle>
-            <CardDescription>Preencha os dados abaixo para se cadastrar no Doctor Reborn</CardDescription>
+            <CardDescription>
+              Preencha os dados abaixo para se cadastrar no Doctor Reborn
+            </CardDescription>
           </CardHeader>
 
           <CardContent>
@@ -151,9 +166,9 @@ export default function RegisterPage() {
                 <Input
                   id="name"
                   value={form.name}
-                  onChange={(e) => handleChange("name", e.target.value)}
+                  onChange={(e) => handleChange('name', e.target.value)}
                   placeholder="Digite seu nome completo"
-                  className={errors.name ? "border-red-500" : ""}
+                  className={errors.name ? 'border-red-500' : ''}
                 />
                 {errors.name && <p className="text-sm text-red-500">{errors.name}</p>}
               </div>
@@ -164,9 +179,9 @@ export default function RegisterPage() {
                   id="email"
                   type="email"
                   value={form.email}
-                  onChange={(e) => handleChange("email", e.target.value)}
+                  onChange={(e) => handleChange('email', e.target.value)}
                   placeholder="seu@email.com"
-                  className={errors.email ? "border-red-500" : ""}
+                  className={errors.email ? 'border-red-500' : ''}
                 />
                 {errors.email && <p className="text-sm text-red-500">{errors.email}</p>}
               </div>
@@ -178,19 +193,19 @@ export default function RegisterPage() {
                     id="age"
                     type="number"
                     value={form.age}
-                    onChange={(e) => handleChange("age", e.target.value)}
+                    onChange={(e) => handleChange('age', e.target.value)}
                     placeholder="Sua idade"
                     min="1"
                     max="120"
-                    className={errors.age ? "border-red-500" : ""}
+                    className={errors.age ? 'border-red-500' : ''}
                   />
                   {errors.age && <p className="text-sm text-red-500">{errors.age}</p>}
                 </div>
 
                 <div className="space-y-2">
                   <Label htmlFor="role">Você é</Label>
-                  <Select value={form.role} onValueChange={(value) => handleChange("role", value)}>
-                    <SelectTrigger id="role" className={errors.role ? "border-red-500" : ""}>
+                  <Select value={form.role} onValueChange={(value) => handleChange('role', value)}>
+                    <SelectTrigger id="role" className={errors.role ? 'border-red-500' : ''}>
                       <SelectValue placeholder="Selecione" />
                     </SelectTrigger>
                     <SelectContent>
@@ -209,9 +224,9 @@ export default function RegisterPage() {
                   id="password"
                   type="password"
                   value={form.password}
-                  onChange={(e) => handleChange("password", e.target.value)}
+                  onChange={(e) => handleChange('password', e.target.value)}
                   placeholder="••••••••"
-                  className={errors.password ? "border-red-500" : ""}
+                  className={errors.password ? 'border-red-500' : ''}
                 />
                 {errors.password && <p className="text-sm text-red-500">{errors.password}</p>}
               </div>
@@ -222,14 +237,20 @@ export default function RegisterPage() {
                   id="confirmPassword"
                   type="password"
                   value={form.confirmPassword}
-                  onChange={(e) => handleChange("confirmPassword", e.target.value)}
+                  onChange={(e) => handleChange('confirmPassword', e.target.value)}
                   placeholder="••••••••"
-                  className={errors.confirmPassword ? "border-red-500" : ""}
+                  className={errors.confirmPassword ? 'border-red-500' : ''}
                 />
-                {errors.confirmPassword && <p className="text-sm text-red-500">{errors.confirmPassword}</p>}
+                {errors.confirmPassword && (
+                  <p className="text-sm text-red-500">{errors.confirmPassword}</p>
+                )}
               </div>
 
-              <Button type="submit" className="w-full bg-blue-600 hover:bg-blue-700" disabled={isLoading}>
+              <Button
+                type="submit"
+                className="w-full bg-blue-600 hover:bg-blue-700"
+                disabled={isLoading}
+              >
                 {isLoading ? (
                   <>
                     <Loader2 className="mr-2 h-4 w-4 animate-spin" />
@@ -248,7 +269,7 @@ export default function RegisterPage() {
           <CardFooter className="flex flex-col space-y-4 border-t pt-4">
             <div className="text-center text-sm">
               <span className="text-gray-500">Já tem uma conta? </span>
-              <Link href="/signin" className="text-blue-600 hover:underline font-medium">
+              <Link href="/signin" className="font-medium text-blue-600 hover:underline">
                 Faça login
               </Link>
             </div>

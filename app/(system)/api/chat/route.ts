@@ -1,11 +1,11 @@
-import { openai } from '@ai-sdk/openai';
-import { streamText, Message } from 'ai';
+import { openai } from '@ai-sdk/openai'
+import { streamText, Message } from 'ai'
 
 // Allow streaming responses up to 30 seconds
-export const maxDuration = 30;
+export const maxDuration = 30
 
 export async function POST(req: Request) {
-  const { messages }: { messages: Message[] } = await req.json();
+  const { messages }: { messages: Message[] } = await req.json()
 
   const result = streamText({
     model: openai('gpt-4o-mini'),
@@ -43,7 +43,7 @@ export async function POST(req: Request) {
     Exemplo de resposta esperada:
     "Após análise da imagem enviada, observa-se descoloração dérmica uniforme na região frontal, compatível com hipopigmentação acrílica de grau leve. Recomenda-se isolamento do agente têxtil potencialmente abrasivo e aplicação de creme neutro à base de silicone médico estético. Monitorar a região por 72 horas. Em caso de progressão, sugerimos reavaliação em ambiente controlado."
         `,
-  });
+  })
 
-  return result.toDataStreamResponse();
+  return result.toDataStreamResponse()
 }
