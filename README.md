@@ -64,6 +64,7 @@ O **Doctor Reborn** é uma plataforma de diagnóstico médico assistido por IA, 
 
    ```env
    # chave sandbox para Codecon Testar
+
    OPENAI_API_KEY=
 
    DATABASE_URL="file:./dev.db"
