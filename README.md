@@ -63,11 +63,12 @@ O **Doctor Reborn** é uma plataforma de diagnóstico médico assistido por IA, 
    Crie o arquivo com as variáveis necessárias:
 
    ```env
+   # chave sandbox para Codecon Testar
    OPENAI_API_KEY=
 
    DATABASE_URL="file:./dev.db"
 
-   NEXTAUTH_SECRET=
+   NEXTAUTH_SECRET=ouwAFDvipk5n7kLU5IqXIwxfDh0xkenB/jqF9FaYiG8=
 
    NEXTAUTH_URL=http://localhost:3000
    ```
