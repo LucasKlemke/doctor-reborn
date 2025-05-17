@@ -135,7 +135,7 @@ export default function SignInPage() {
           <CardFooter className="flex flex-col space-y-4 border-t pt-4">
             <div className="text-center text-sm">
               <span className="text-gray-500">Não tem uma conta? </span>
-              <Link href="/auth/register" className="text-blue-600 hover:underline font-medium">
+              <Link href="/register" className="text-blue-600 hover:underline font-medium">
                 Cadastre-se
               </Link>
             </div>

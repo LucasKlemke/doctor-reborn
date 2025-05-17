@@ -117,7 +117,7 @@ export default function RegisterPage() {
 
       if (res.ok) {
         toast("Você já pode fazer login com suas credenciais.")
-        router.push("/login")
+        router.push("/signin")
       } else {
         const data = await res.json().catch(() => ({ error: "Erro desconhecido" }))
         toast("Não foi possível completar o cadastro. Tente novamente.")
@@ -248,7 +248,7 @@ export default function RegisterPage() {
           <CardFooter className="flex flex-col space-y-4 border-t pt-4">
             <div className="text-center text-sm">
               <span className="text-gray-500">Já tem uma conta? </span>
-              <Link href="/login" className="text-blue-600 hover:underline font-medium">
+              <Link href="/signin" className="text-blue-600 hover:underline font-medium">
                 Faça login
               </Link>
             </div>
