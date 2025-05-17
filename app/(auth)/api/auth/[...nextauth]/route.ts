@@ -63,13 +63,13 @@ export const authOptions = {
     },
     async session({ session, token }: { session: Session; token: JWT }) {
       if (session.user) {
-        // @ts-ignore
+        // @ts-expect-error
         session.user.id = token.id
         session.user.name = token.name
         session.user.email = token.email
-        // @ts-ignore
+        // @ts-expect-error
         session.user.age = token.age
-        // @ts-ignore
+        // @ts-expect-error
         session.user.role = token.role
       }
       return session

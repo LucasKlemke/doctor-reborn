@@ -74,6 +74,7 @@ const EditBabyFormButton = ({ baby }: { baby: Baby }) => {
       toast('Bebê atualizado com sucesso!')
     } catch (e) {
       toast('Erro ao atualizar bebê')
+      console.error(e)
     }
     setIsLoading(false)
   }

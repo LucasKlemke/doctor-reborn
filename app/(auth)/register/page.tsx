@@ -132,11 +132,12 @@ export default function RegisterPage() {
         toast('Você já pode fazer login com suas credenciais.')
         router.push('/signin')
       } else {
-        const data = await res.json().catch(() => ({ error: 'Erro desconhecido' }))
+        await res.json().catch(() => ({ error: 'Erro desconhecido' }))
         toast('Não foi possível completar o cadastro. Tente novamente.')
       }
     } catch (error) {
       toast('Ocorreu um erro inesperado. Tente novamente mais tarde.')
+      console.error('Error during registration:', error)
     } finally {
       setIsLoading(false)
     }

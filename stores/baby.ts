@@ -17,9 +17,9 @@ export type Actions = {
     gender: 'OTHER' | 'MALE' | 'FEMALE'
     brand?: string | undefined
     notes?: string | undefined
-  }) => void
+  }) => Promise<void>
   setSelectedBaby: (selectedBaby: Baby) => void
-  removeBaby: (babyId: string) => void
+  removeBaby: (babyId: string) => Promise<void>
   updateBaby: (babyId: string, updatedBaby: Baby) => Promise<void>
 }
 
