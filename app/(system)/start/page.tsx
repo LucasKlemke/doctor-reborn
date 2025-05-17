@@ -14,11 +14,11 @@ export default function DiagnosticoPage() {
   return (
     <main className="container mx-auto flex flex-1 flex-col items-center justify-center px-4 py-12">
       <Link
-        href="/"
+        href="/dashboard"
         className="mb-2 inline-flex items-center text-sm text-blue-600 transition-colors hover:text-blue-800"
       >
         <ArrowLeft className="mr-1 h-4 w-4" />
-        <span>Voltar para página inicial</span>
+        <span>Voltar</span>
       </Link>
       <h1 className="mb-8 text-center text-3xl font-bold text-blue-900 md:text-4xl">
         Como você prefere receber ajuda?

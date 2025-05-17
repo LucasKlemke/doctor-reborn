@@ -64,7 +64,7 @@ export default function SignInPage() {
         toast('Email ou senha incorretos. Tente novamente.')
       } else {
         toast('Redirecionando para a página inicial...')
-        router.push('/start')
+        router.push('/dashbaord')
       }
     } catch (error) {
       toast('Ocorreu um erro inesperado. Tente novamente mais tarde.')

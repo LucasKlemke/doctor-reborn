@@ -41,7 +41,7 @@ export async function GET(request: Request, { params }: { params: { id: string }
 // PUT /api/babies/[id] - Atualizar um bebê
 export async function PUT(request: Request, { params }: { params: { id: string } }) {
   try {
-    const session = await getServerSession(authOptions)
+    const session = await getServerSession()
 
     if (!session || !session.user) {
       return NextResponse.json({ error: 'Não autorizado' }, { status: 401 })

@@ -20,7 +20,7 @@ export default function Home() {
           </p>
 
           <div className="pt-4">
-            <Link href="/start">
+            <Link href="/dashboard">
               <Button size="lg" className="bg-blue-600 px-8 py-6 text-lg hover:bg-blue-700">
                 Começar
               </Button>

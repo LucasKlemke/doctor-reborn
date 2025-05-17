@@ -35,10 +35,17 @@ model Baby {
   birthDate DateTime
   brand     String
   notes     String?
+  gender    Gender   @default(OTHER)
   userId    String
   user      User     @relation(fields: [userId], references: [id])
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+}
+
+enum Gender {
+  MALE
+  FEMALE
+  OTHER
 }
 
 model Chat {
