@@ -14,7 +14,9 @@ const Header = () => {
     <header className="bg-sidebar flex w-full items-center justify-between border-b px-5 py-6">
       <div className="flex items-center gap-2">
         {/* svg logo_header */}
-        <img src="/logo_header.svg" alt="Doctor Reborn Logo" className='w-60'  />
+        <Link href={'/'}>
+          <img src="/logo_header.svg" alt="Doctor Reborn Logo" className="w-60" />
+        </Link>
       </div>
       {status !== 'loading' && (
         <>

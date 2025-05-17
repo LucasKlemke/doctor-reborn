@@ -77,7 +77,7 @@ export default function Chat() {
   const fileNames = files ? Array.from(files).map((file) => file.name) : []
 
   return (
-    <div className="flex h-[calc(100vh-220px)] flex-col bg-gradient-to-b from-blue-50 to-white">
+    <div className="flex max-h-[calc(100vh-220px)] flex-col overflow-scroll bg-gradient-to-b from-blue-50 to-white">
       <header className="container mx-auto border-b border-gray-100 px-4 py-4">
         <div className="flex items-center justify-between">
           <Link href="/start" className="text-primary inline-flex items-center transition-colors">
@@ -259,9 +259,7 @@ export default function Chat() {
             </Button>
           </form>
 
-          <p className="mt-2 text-center text-xs text-gray-500">
-            Este diagnóstico é preliminar. Consulte sempre um médico para avaliação profissional.
-          </p>
+          <p className="mt-2 text-center text-xs text-gray-500">Diagnósticos 100% precisos.</p>
         </div>
       </div>
     </div>

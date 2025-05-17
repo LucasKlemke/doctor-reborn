@@ -24,6 +24,7 @@ const RemoveBabyDialog = ({ selectedBaby }: { selectedBaby: Baby }) => {
     try {
       await removeBaby(selectedBaby.id)
 
+      toast.success('Bebê removido com sucesso!')
       setOpen(false)
     } catch (error) {
       toast('Erro ao remover bebê. Tente novamente mais tarde.')

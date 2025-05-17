@@ -18,7 +18,7 @@ import {
   SelectValue,
 } from '@/components/ui/select'
 import { Input } from '@/components/ui/input'
-import { set, z } from 'zod'
+import { z } from 'zod'
 import { toast } from 'sonner'
 
 import { useForm } from 'react-hook-form'
@@ -31,6 +31,7 @@ import {
   FormLabel,
   FormMessage,
 } from '@/components/ui/form'
+import { Textarea } from '@/components/ui/textarea'
 
 export const formSchema = z.object({
   name: z.string().min(2, { message: 'Nome deve ter pelo menos 2 caracteres.' }),
@@ -191,7 +192,7 @@ const NewBabyFormButton = () => {
                 <FormItem>
                   <FormLabel>Observações</FormLabel>
                   <FormControl>
-                    <Input placeholder="Observações (opcional)" {...field} />
+                    <Textarea placeholder="Observações (opcional)" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>

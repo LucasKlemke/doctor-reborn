@@ -7,7 +7,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from '@/components/ui/dialog'
-import { Pencil, Plus } from 'lucide-react'
+import { Pencil } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { useBabiesActions } from '@/stores/baby'
 import {
@@ -18,7 +18,7 @@ import {
   SelectValue,
 } from '@/components/ui/select'
 import { Input } from '@/components/ui/input'
-import { set, z } from 'zod'
+import { z } from 'zod'
 import { toast } from 'sonner'
 
 import { useForm } from 'react-hook-form'
@@ -32,6 +32,7 @@ import {
   FormMessage,
 } from '@/components/ui/form'
 import { Baby } from '@prisma/client'
+import { Textarea } from '@/components/ui/textarea'
 
 export const formSchema = z.object({
   name: z.string().min(2, { message: 'Nome deve ter pelo menos 2 caracteres.' }),
@@ -191,7 +192,7 @@ const EditBabyFormButton = ({ baby }: { baby: Baby }) => {
                 <FormItem>
                   <FormLabel>Observações</FormLabel>
                   <FormControl>
-                    <Input placeholder="Observações (opcional)" {...field} />
+                    <Textarea placeholder="Observações (opcional)" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
