@@ -2,7 +2,6 @@ import React from 'react'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
 import Link from 'next/link'
-import Image from 'next/image'
 
 const ContactCard = () => {
   return (
@@ -14,7 +13,7 @@ const ContactCard = () => {
       <Card className="hover:border-secondary flex cursor-pointer flex-col justify-between border-2 transition-all hover:shadow-lg">
         <CardHeader className="flex w-full items-center justify-between">
           <CardTitle className="text-chart-1 mt-4 text-2xl">Atendimento com I.H</CardTitle>
-          <Image src="/human_intelligence.svg" alt="Doctor Reborn Logo" className="w-16" />
+          <img src="/human_intelligence.svg" alt="Doctor Reborn Logo" className="w-16" />
         </CardHeader>
         <CardContent>
           <p className="text-start text-gray-600">
