@@ -17,9 +17,6 @@ export default function RootLayout({
         <Header />
         {children}
       </div>
-      <footer className="container mx-auto border-t border-gray-100 py-4 text-center text-sm text-gray-500">
-        © {new Date().getFullYear()} Doctor Reborn • Tecnologia a serviço da saúde infantil
-      </footer>
     </AuthGuard>
   )
 }

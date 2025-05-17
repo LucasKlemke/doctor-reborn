@@ -6,10 +6,11 @@ import EditBabyFormButton from './edit-baby-form'
 import { Button } from '@/components/ui/button'
 import { useRouter } from 'next/navigation'
 import { useBabiesActions } from '@/stores/baby'
+import RemoveBabyDialog from './remove-baby-dialog'
 
 const BabyListItem = ({ baby }: { baby: Baby }) => {
   const router = useRouter()
-  const { setSelectedBaby } = useBabiesActions()
+  const { setSelectedBaby, removeBaby } = useBabiesActions()
 
   const handleSelectBaby = (baby: Baby) => {
     setSelectedBaby(baby)
@@ -45,6 +46,7 @@ const BabyListItem = ({ baby }: { baby: Baby }) => {
       </div>
 
       <div className="mt-6 flex gap-3">
+        <RemoveBabyDialog selectedBaby={baby} />
         <EditBabyFormButton baby={baby} />
 
         <Button className="bg-primary flex-1 border-none" onClick={() => handleSelectBaby(baby)}>

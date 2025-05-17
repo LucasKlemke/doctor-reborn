@@ -12,6 +12,7 @@ import { useBabiesActions } from '@/stores/baby'
 import { Baby } from '@prisma/client'
 import { Trash } from 'lucide-react'
 import React, { useState } from 'react'
+import { toast } from 'sonner'
 
 const RemoveBabyDialog = ({ selectedBaby }: { selectedBaby: Baby }) => {
   const [open, setOpen] = useState(false)
@@ -21,12 +22,11 @@ const RemoveBabyDialog = ({ selectedBaby }: { selectedBaby: Baby }) => {
   const handleSubmit = async () => {
     setIsLoading(true)
     try {
-    
       await removeBaby(selectedBaby.id)
 
       setOpen(false)
     } catch (error) {
-      alert('Erro ao remover bebê. Tente novamente mais tarde.')
+      toast('Erro ao remover bebê. Tente novamente mais tarde.')
       console.error('Error removing baby:', error)
     }
     setIsLoading(false)
@@ -34,7 +34,7 @@ const RemoveBabyDialog = ({ selectedBaby }: { selectedBaby: Baby }) => {
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger onClick={() => setOpen(true)} asChild>
-        <Button size={'icon'} className="gap-2">
+        <Button size={'icon'} variant={'destructive'} className="gap-2">
           <Trash className="h-4 w-4" />
           {/* Remover bebê */}
         </Button>

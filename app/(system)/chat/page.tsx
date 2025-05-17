@@ -10,7 +10,6 @@ import { Card } from '@/components/ui/card'
 import { ArrowLeft, Bot, FileImage, Paperclip, Send, User, X } from 'lucide-react'
 import Link from 'next/link'
 import { Markdown } from '@/components/ui/markdown'
-import AuthGuard from '@/components/auth-guard'
 import { useSearchParams } from 'next/navigation'
 import { useBabiesActions, useSelectedBaby } from '@/stores/baby'
 import { useRouter } from 'next/navigation'
@@ -81,14 +80,10 @@ export default function Chat() {
     <div className="flex h-[calc(100vh-220px)] flex-col bg-gradient-to-b from-blue-50 to-white">
       <header className="container mx-auto border-b border-gray-100 px-4 py-4">
         <div className="flex items-center justify-between">
-          <Link
-            href="/start"
-            className="inline-flex items-center text-blue-600 transition-colors hover:text-blue-800"
-          >
+          <Link href="/start" className="text-primary inline-flex items-center transition-colors">
             <ArrowLeft className="mr-2 h-4 w-4" />
             <span>Voltar</span>
           </Link>
-          <h1 className="text-xl font-bold text-blue-900">Doctor Reborn AI</h1>
           <div className="w-20"></div> {/* Spacer for alignment */}
         </div>
       </header>
@@ -97,8 +92,8 @@ export default function Chat() {
         <Card className="mb-20 flex-1 overflow-y-auto bg-white/80 p-4">
           {messages.length === 0 ? (
             <div className="flex h-full flex-col items-center justify-center p-6 text-center text-gray-500">
-              <Bot className="mb-4 h-16 w-16 text-blue-300" />
-              <h2 className="mb-2 text-xl font-medium text-blue-900">
+              <img src="/llm_sparkles.svg" alt="Doctor Reborn Logo" className="w-16" />
+              <h2 className="text-primary mb-2 text-xl font-medium">
                 Bem-vindo ao Doctor Reborn AI
               </h2>
               <p className="max-w-md">
@@ -116,7 +111,7 @@ export default function Chat() {
                   <div
                     className={`max-w-[80%] rounded-2xl p-4 ${
                       m.role === 'user'
-                        ? 'rounded-tr-none bg-blue-600 text-white'
+                        ? 'bg-primary rounded-tr-none text-white'
                         : 'rounded-tl-none border border-gray-200 bg-gray-100 text-gray-800'
                     } `}
                   >
@@ -128,7 +123,7 @@ export default function Chat() {
                         </>
                       ) : (
                         <>
-                          <Bot className="mr-2 h-4 w-4 text-blue-600" />
+                          <Bot className="text-primary mr-2 h-4 w-4" />
                           <span className="font-medium">Doctor Reborn AI</span>
                         </>
                       )}
@@ -177,6 +172,17 @@ export default function Chat() {
                   </div>
                 </div>
               ))}
+              {isLoading && (
+                <div className="flex justify-start">
+                  <div className="max-w-[80%] rounded-2xl bg-gray-100 p-4 text-gray-800">
+                    <div className="mb-2 flex items-center">
+                      <Bot className="text-primary mr-2 h-4 w-4" />
+                      <span className="font-medium">Doctor Reborn AI</span>
+                    </div>
+                    <p>Carregando...</p>
+                  </div>
+                </div>
+              )}
               <div ref={messagesEndRef} />
             </div>
           )}
@@ -188,7 +194,7 @@ export default function Chat() {
           {fileNames.length > 0 && (
             <div className="mb-2 rounded-lg bg-blue-50 p-2">
               <div className="flex items-center justify-between">
-                <div className="flex items-center text-sm text-blue-700">
+                <div className="text-primary flex items-center text-sm">
                   <FileImage className="mr-2 h-4 w-4" />
                   <span>{fileNames.length} arquivo(s) selecionado(s)</span>
                 </div>
@@ -245,7 +251,7 @@ export default function Chat() {
 
             <Button
               type="submit"
-              className="flex-shrink-0 rounded-full bg-blue-600 hover:bg-blue-700"
+              className="flex-shrink-0 rounded-full"
               disabled={isLoading || (!input.trim() && !files)}
             >
               <Send className="h-5 w-5" />
