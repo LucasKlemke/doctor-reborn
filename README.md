@@ -63,7 +63,7 @@ O **Doctor Reborn** é uma plataforma de diagnóstico médico assistido por IA, 
    Crie o arquivo com as variáveis necessárias:
 
    ```env
-   # chave sandbox para Codecon Testar
+   # chave sandbox para Codecon Testar esta no final do input About the project dentro da aba Project Details do formulário de envio
 
    OPENAI_API_KEY=
 
