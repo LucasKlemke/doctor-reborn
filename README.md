@@ -1,5 +1,4 @@
-
-# 🧸 RebornMed — Diagnóstico IA para Bebês Reborn
+# 🧸 Doctor Reborn — Diagnóstico IA para Bebês Reborn
 
 > **Aviso Legal:** Este projeto foi criado para fins de demonstração e não deve ser utilizado como fonte médica real. Bebês Reborn não necessitam de atendimento clínico. Ainda.
 
@@ -7,22 +6,18 @@
 
 ## 🩺 Descrição do Projeto
 
-O **RebornMed** é uma plataforma de diagnóstico médico assistido por IA, dedicada exclusivamente à saúde de Bebês Reborn. Com o avanço das leis que proíbem o atendimento de bonecos no sistema público de saúde (Lei nº 14.785), nasceu a necessidade de um sistema ético, preciso e digital para acolher pais de prole neonatamodular plástica.
-
-Através de uma interface simples, o usuário pode subir uma imagem do seu bebê e receber um diagnóstico estético imediato — com inteligência artificial no plano básico, ou *inteligência humana* (um link pro WhatsApp) no plano Pro.
+O **Doctor Reborn** é uma plataforma de diagnóstico médico assistido por IA, dedicada exclusivamente à saúde de Bebês Reborn. Através de uma interface intuitiva, pais autenticados podem gerenciar seus dependentes com um CRUD completo, e obter diagnósticos estéticos e clínicos imediatos através de um chat inteligente. Use a funcionalidade de upload de imagens para análise com LLM, ou opte pelo atendimento via WhatsApp para uma consulta mais personalizada.
 
 ---
 
 ## ✅ Requisitos Funcionais (RF)
 
-- **RF01**: Permitir upload de imagem de um Bebê Reborn.
-- **RF02**: Processar a imagem e retornar um "diagnóstico clínico".
-- **RF03**: Exibir frases automáticas depreciando a aparência do bebê (modo gratuito).
-- **RF04**: Exibir botão para "Plano Pro", redirecionando para o WhatsApp.
-- **RF05**: Sistema de planos: gratuito (IA) e pago (HI).
-- **RF06**: Registro de histórico de diagnósticos.
-- **RF07**: Tela de loading com frases técnicas rebornológicas.
-- **RF08**: Página de erro caso o bebê enviado seja *humano real*.
+- **RF01**: Permitir o cadastro e autenticação de pais.
+- **RF02**: CRUD para gerenciamento de Bebês Reborn (dependentes).
+- **RF03**: Permitir upload de imagem de um Bebê Reborn para análise.
+- **RF04**: Processar a imagem e retornar um "diagnóstico clínico" via chat com LLM.
+- **RF05**: Exibir frases automáticas depreciando a aparência do bebê (modo gratuito).
+- **RF06**: Direcionamento para atendimento via WhatsApp para consultas especializadas.
 
 ---
 
@@ -40,36 +35,45 @@ Através de uma interface simples, o usuário pode subir uma imagem do seu bebê
 
 ## 🧱 Stack Utilizada
 
-- [x] **Next.js**  
-- [x] **TailwindCSS + Shadcn UI**  
-- [x] **TypeScript**  
-- [x] **Zustand** (caso desejem persistência global do estado clínico)
-- [x] **IA ou Array de Frases** depreciativas (conforme plano)
-- [x] **WhatsApp API** (redirecionamento para plano Pro)
+- [x] **Next.js**
+- [x] **TailwindCSS + Shadcn UI**
+- [x] **TypeScript**
+- [x] **SQLite Local**
+- [x] **Zustand** (para persistência global do estado clínico)
+- [x] **LLM com suporte a upload de imagens**
 
 ---
 
 ## 🚀 Como Rodar o Projeto
 
 1. **Clone o repositório**
+
    ```bash
-   git clone https://github.com/seuusuario/rebornmed.git
-   cd rebornmed
+   git clone https://github.com/seuusuario/doctor_reborn.git
+   cd doctor_reborn
    ```
 
 2. **Instale as dependências**
+
    ```bash
    pnpm install
    ```
 
-3. **Configure o arquivo `.env.local`**
+3. **Configure o arquivo `.env`**
    Crie o arquivo com as variáveis necessárias:
+
    ```env
-   NEXT_PUBLIC_SITE_URL=http://localhost:3000
-   OPENAI_API_KEY=sua-chave-aqui (caso use IA real)
+   OPENAI_API_KEY=
+
+   DATABASE_URL="file:./dev.db"
+
+   NEXTAUTH_SECRET=
+
+   NEXTAUTH_URL=http://localhost:3000
    ```
 
 4. **Rode o projeto**
+
    ```bash
    pnpm dev
    ```
@@ -92,4 +96,4 @@ Através de uma interface simples, o usuário pode subir uma imagem do seu bebê
 
 ## 🤡 Por que isso é gloriosamente inútil?
 
-Porque ninguém *em sã consciência* gastaria dinheiro com diagnósticos médicos para um objeto de vinil.
+Porque ninguém _em sã consciência_ gastaria dinheiro com diagnósticos médicos para um objeto de vinil.
