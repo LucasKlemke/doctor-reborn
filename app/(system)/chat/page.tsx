@@ -7,7 +7,7 @@ import { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
 import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
-import { ArrowLeft, Bot, FileImage, Paperclip, Send, User, X } from 'lucide-react'
+import { ArrowLeft, Bot, FileImage, Loader2, Paperclip, Send, User, X } from 'lucide-react'
 import Link from 'next/link'
 import { Markdown } from '@/components/ui/markdown'
 import { useSearchParams } from 'next/navigation'
@@ -54,9 +54,9 @@ export default function Chat() {
   }
 
   // Effect to scroll to bottom when messages change
-  useState(() => {
+  useEffect(() => {
     scrollToBottom()
-  })
+  }, [messages, isLoading])
 
   // Handle file selection
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -77,7 +77,7 @@ export default function Chat() {
   const fileNames = files ? Array.from(files).map((file) => file.name) : []
 
   return (
-    <div className="flex max-h-[calc(100vh-220px)] flex-col overflow-scroll bg-gradient-to-b from-blue-50 to-white">
+    <div className="flex flex-col overflow-scroll bg-gradient-to-b from-blue-50 to-white">
       <header className="container mx-auto border-b border-gray-100 px-4 py-4">
         <div className="flex items-center justify-between">
           <Link href="/start" className="text-primary inline-flex items-center transition-colors">
@@ -89,7 +89,7 @@ export default function Chat() {
       </header>
 
       <main className="container mx-auto flex flex-1 flex-col px-4 py-4">
-        <Card className="mb-20 flex-1 overflow-y-auto bg-white/80 p-4">
+        <Card className="mb-20 h-[800px] overflow-y-auto bg-white/80 p-4">
           {messages.length === 0 ? (
             <div className="flex h-full flex-col items-center justify-center p-6 text-center text-gray-500">
               <img src="/llm_sparkles.svg" alt="Doctor Reborn Logo" className="w-16" />
@@ -173,14 +173,8 @@ export default function Chat() {
                 </div>
               ))}
               {isLoading && (
-                <div className="flex justify-start">
-                  <div className="max-w-[80%] rounded-2xl bg-gray-100 p-4 text-gray-800">
-                    <div className="mb-2 flex items-center">
-                      <Bot className="text-primary mr-2 h-4 w-4" />
-                      <span className="font-medium">Doctor Reborn AI</span>
-                    </div>
-                    <p>Carregando...</p>
-                  </div>
+                <div className="text-primary my-4 flex justify-center">
+                  <Loader2 className="animate-spin" />
                 </div>
               )}
               <div ref={messagesEndRef} />
