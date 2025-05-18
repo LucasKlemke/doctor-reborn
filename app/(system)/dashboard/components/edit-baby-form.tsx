@@ -117,7 +117,7 @@ const EditBabyFormButton = ({ baby }: { baby: Baby }) => {
                 <FormItem>
                   <FormLabel>Data de nascimento</FormLabel>
                   <FormControl>
-                    <Input type="date" {...field} />
+                    <Input type="date" max={new Date().toISOString().split('T')[0]} {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>

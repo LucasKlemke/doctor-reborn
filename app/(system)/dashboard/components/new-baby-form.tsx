@@ -53,7 +53,7 @@ const NewBabyFormButton = () => {
     resolver: zodResolver(formSchema),
     defaultValues: {
       name: '',
-      birthDate: '',
+      birthDate: new Date().toISOString().split('T')[0],
       gender: undefined,
       brand: 'SkyNet',
       weight: '',
@@ -117,7 +117,7 @@ const NewBabyFormButton = () => {
                 <FormItem>
                   <FormLabel>Data de nascimento</FormLabel>
                   <FormControl>
-                    <Input type="date" {...field} />
+                    <Input type="date" max={new Date().toISOString().split('T')[0]} {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
