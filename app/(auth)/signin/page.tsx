@@ -16,7 +16,7 @@ import {
   CardTitle,
 } from '@/components/ui/card'
 import { Label } from '@/components/ui/label'
-import { Stethoscope, Loader2, ArrowRight, ArrowLeft } from 'lucide-react'
+import {  Loader2, ArrowRight, ArrowLeft } from 'lucide-react'
 import Link from 'next/link'
 import { toast } from 'sonner'
 

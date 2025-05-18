@@ -22,7 +22,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select'
-import { Stethoscope, Loader2, UserPlus, ArrowLeft } from 'lucide-react'
+import { Loader2, UserPlus, ArrowLeft } from 'lucide-react'
 import Link from 'next/link'
 import { toast } from 'sonner'
 

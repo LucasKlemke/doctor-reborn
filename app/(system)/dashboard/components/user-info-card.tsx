@@ -8,7 +8,7 @@ const UserInforCard = ({ user }: { user: User }) => {
   return (
     <Card className="md:col-span-1">
       <CardHeader>
-        <CardTitle className="text-chart-1 text-2xl">Perfil do Genitor</CardTitle>
+        <CardTitle className="text-chart-1 text-2xl">Perfil do Genitor (Você)</CardTitle>
       </CardHeader>
       <CardContent className="grid grid-rows-1 gap-4">
         <div className="flex items-center gap-x-3">

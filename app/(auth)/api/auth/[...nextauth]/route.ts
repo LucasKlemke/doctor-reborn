@@ -63,13 +63,13 @@ export const authOptions = {
     },
     async session({ session, token }: { session: Session; token: JWT }) {
       if (session.user) {
-        // @ts-expect-error
+        // @ts-expect-error user.id is not in SessionUser type
         session.user.id = token.id
         session.user.name = token.name
         session.user.email = token.email
-        // @ts-expect-error
+        // @ts-expect-error user.age is not in SessionUser type
         session.user.age = token.age
-        // @ts-expect-error
+        // @ts-expect-error user.role is not in SessionUser type
         session.user.role = token.role
       }
       return session
@@ -77,6 +77,6 @@ export const authOptions = {
   },
 }
 
-// @ts-ignore
+// @ts-expect-error NextAuth expects a different type for options
 const handler = NextAuth(authOptions)
 export { handler as GET, handler as POST }
