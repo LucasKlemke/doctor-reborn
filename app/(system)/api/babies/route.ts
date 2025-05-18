@@ -14,10 +14,6 @@ export async function GET() {
       return NextResponse.json({ error: 'Não autorizado' }, { status: 401 })
     }
 
-    // Aqui você buscaria os bebês do banco de dados
-    // const babies = await db.query...
-
-    // Simulando dados para exemplo
     const babies = await getBabiesByUserId(user.id)
 
     return NextResponse.json(babies)
