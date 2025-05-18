@@ -3,6 +3,7 @@ import Image from 'next/image'
 import { Bot, User } from 'lucide-react'
 import { Markdown } from '@/components/ui/markdown'
 import { UIMessage } from 'ai'
+// Oi, deixei uns comentários por ai falando com você que ta lendo, espero que ache todos rsrs.
 
 const Message = ({ message }: { message: UIMessage }) => {
   return (

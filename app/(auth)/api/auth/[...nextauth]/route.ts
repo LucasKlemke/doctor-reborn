@@ -9,6 +9,14 @@ import type { JWT } from 'next-auth/jwt'
 import type { Session } from 'next-auth'
 import { User } from '@prisma/client'
 
+// O FRITZ ! MASCOTE DE JOINIVLLE
+// ─────▄████▀█▄
+// ───▄█████████████████▄
+// ─▄█████.▼.▼.▼.▼.▼.▼▼▼▼
+// ▄███████▄.▲.▲▲▲▲▲▲▲▲
+// ████████████████████▀▀
+// 🎉 PARABÉNS, VOCÊ ACHOU MAIS UM COMENTÁRIO MEU QUE EU DEIXEI POR AI
+
 export const authOptions = {
   adapter: PrismaAdapter(prisma),
   session: {

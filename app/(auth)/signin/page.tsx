@@ -20,6 +20,8 @@ import {  Loader2, ArrowRight, ArrowLeft } from 'lucide-react'
 import Link from 'next/link'
 import { toast } from 'sonner'
 
+// Desculpa por ter deixado meio grande aqui, mas é que a IA que fez, fiz o melhor que eu pude.
+
 export default function SignInPage() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')

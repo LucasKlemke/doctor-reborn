@@ -48,3 +48,38 @@ const UserInforCard = ({ user }: { user: User }) => {
 }
 
 export default UserInforCard
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Oi, tudo bem ? Ja achou bastante comentário meu pelo código ? kakakkaka

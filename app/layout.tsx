@@ -19,6 +19,8 @@ export const metadata: Metadata = {
   description: 'Uma IA especializada em cuidados, dicas e informações para bebês reborn.',
 }
 
+// Vida longa ao Barto ! O panda mais legal do mundo.
+
 export default function RootLayout({
   children,
 }: Readonly<{

@@ -90,3 +90,11 @@ export const useBabies = () => useBabyStore((state) => state.babies)
 export const useSelectedBaby = () => useBabyStore((state) => state.selectedBaby)
 
 export const useBabiesActions = () => useBabyStore((state) => state.actions)
+
+// TA CHEIO DE COMENTÁRIO ESCONDIDO POR AI
+// ─────▀▄▀─────▄─────▄
+// ──▄███████▄──▀██▄██▀
+// ▄█████▀█████▄──▄█
+// ███████▀████████▀
+// ─▄▄▄▄▄▄███████▀
+// NÃO VALE OLHAR HISTÓRICO DE ALTERAÇÃO NO GITHUB, SE OLHAR TU PERDEU

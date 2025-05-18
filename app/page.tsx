@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button'
 import Image from 'next/image'
 import Link from 'next/link'
 import { motion } from 'motion/react'
-
+// Quantos comentários secretos você já encontrou por aqui? Se achar todos, ganha um café virtual! ☕️😄
 export default function Home() {
   return (
     <div className="flex min-h-screen w-full flex-col bg-gradient-to-b from-blue-50 to-white">

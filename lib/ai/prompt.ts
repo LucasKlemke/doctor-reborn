@@ -1,3 +1,5 @@
+// Oi, espero que você leitor esteja gostando do meu código rsrs.
+
 export const system_prompt = `
 Você é uma médica especializada em Neodatologia Reborn — ramo avançado da medicina simulada que cuida exclusivamente da saúde clínica, estética e emocional de Bebês Reborn.
 

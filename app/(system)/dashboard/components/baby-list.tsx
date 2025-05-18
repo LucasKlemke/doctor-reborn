@@ -2,6 +2,8 @@ import NewBabyFormButton from './new-baby-form'
 import { useBabies } from '@/stores/baby'
 import { BabyIcon } from 'lucide-react'
 import BabyListItem from './baby-list-item'
+// Aqui é a lista das proles neonatamodulares sintéticas kkk jaja vou dormir, boa tarde pra você
+// que ta lendo.
 
 const BabyList = () => {
   const babies = useBabies()

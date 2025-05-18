@@ -10,6 +10,20 @@ import MultiModalInput from './multimodal-input'
 import EmptyChatMessage from './empty-chat-message'
 import { Baby } from '@prisma/client'
 
+// TUCANO DIRETO DE XIQUE-XIQUE BAHIA
+// ░░░░░░░░▄▄▄▀▀▀▄▄███▄░░░░░░░░░░░░░░
+// ░░░░░▄▀▀░░░░░░░▐░▀██▌░░░░░░░░░░░░░
+// ░░░▄▀░░░░▄▄███░▌▀▀░▀█░░░░░░░░░░░░░
+// ░░▄█░░▄▀▀▒▒▒▒▒▄▐░░░░█▌░░░░░░░░░░░░
+// ░▐█▀▄▀▄▄▄▄▀▀▀▀▌░░░░░▐█▄░░░░░░░░░░░
+// ░▌▄▄▀▀░░░░░░░░▌░░░░▄███████▄░░░░░░
+// ░░░░░░░░░░░░░▐░░░░▐███████████▄░░░
+// ░░░░░░░░░░░░░▐░░░░▐█████████████▄
+// ░░░░░░░░░░░░░░▀▄░░░▐█████████████▄
+// ░░░░░░░░░░░░░░░░▀▄▄███████████████
+// ░░░░░░░░░░░░░░░░░░░░░░░░█▀██████░░
+// EI, DEIXEI DIVERSOS COMENTÁRIOS ESPALHADOS AI PELO CÓDIGO, ESPERO QUE VOCÊ ACHE TODOS ELES.
+
 export default function Chat({ selectedBaby }: { selectedBaby: Baby }) {
   // useStates para lidar com lógica de chat
   const { messages, input, handleInputChange, handleSubmit, isLoading } = useChat({
