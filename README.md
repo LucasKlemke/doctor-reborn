@@ -10,6 +10,18 @@ O **Doctor Reborn** é uma plataforma de diagnóstico médico assistido por IA, 
 
 ---
 
+## 👨‍💻👨‍💻 Membros responsávies
+
+**Gabriel Horner**
+Designer de Experiências e Estrategista Criativo
+Responsável por toda a camada visual e emocional do projeto. Garante que cada pixel tenha um propósito (mesmo que inútil) e que a jornada do usuário seja esteticamente absurda.
+
+**Lucas Klemke**
+Desenvolvedor Fullstack e Executor Técnico
+Transforma ideias insanas em código funcional. É o cérebro por trás da engenharia que faz diagnósticos clínicos em bonecos de plástico com seriedade hospitalar.
+
+---
+
 ## ✅ Requisitos Funcionais (RF)
 
 - **RF01**: Permitir o cadastro e autenticação de pais.
