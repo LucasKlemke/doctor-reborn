@@ -90,7 +90,7 @@ const EditBabyFormButton = ({ baby }: { baby: Baby }) => {
       </DialogTrigger>
       <DialogContent>
         <DialogHeader>
-          <DialogTitle>Atualizar bebê</DialogTitle>
+          <DialogTitle>Atualizar dados do bebê</DialogTitle>
           <DialogDescription>
             Preencha as informações do bebê para atualizar o registro.
           </DialogDescription>

@@ -78,8 +78,8 @@ export default function SignInPage() {
     <div className="flex min-h-screen items-center justify-center bg-gradient-to-b from-blue-50 to-white p-4">
       <div className="w-full max-w-md">
         <div className="mb-6 flex justify-center">
-          <div className="bg-primary rounded-full p-3">
-            <Stethoscope className="h-8 w-8 text-white" />
+          <div className="p-3">
+            <img src="/logo_header.svg" alt="Doctor Reborn Logo" className="w-60" />
           </div>
         </div>
 

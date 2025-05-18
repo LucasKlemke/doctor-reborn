@@ -10,7 +10,7 @@ const UserInforCard = ({ user }: { user: User }) => {
       <CardHeader>
         <CardTitle className="text-chart-1 text-2xl">Perfil do Genitor</CardTitle>
       </CardHeader>
-      <CardContent className="grid grid-rows-2 gap-4">
+      <CardContent className="grid grid-rows-1 gap-4">
         <div className="flex items-center gap-x-3">
           <span className="flex items-center gap-2 text-sm">
             <UserIcon className="h-4 w-4" />
