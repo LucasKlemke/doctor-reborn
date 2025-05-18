@@ -110,4 +110,4 @@ Transforma ideias insanas em código funcional. É o cérebro por trás da engen
 
 ## 🤡 Por que isso é gloriosamente inútil?
 
-Porque ninguém _em sã consciência_ gastaria dinheiro com diagnósticos médicos para um objeto de vinil.
+Porque ninguém _em sã consciência_ gastaria dinheiro com diagnósticos médicos para um objeto de vinil. Eu acho.
