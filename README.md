@@ -49,6 +49,7 @@ Transforma ideias insanas em código funcional. É o cérebro por trás da engen
 - [x] **Next.js**
 - [x] **TailwindCSS + Shadcn UI**
 - [x] **TypeScript**
+- [x] **Prisma (ORM)**
 - [x] **SQLite Local**
 - [x] **Zustand** (para persistência global do estado clínico)
 - [x] **LLM com suporte a upload de imagens**
