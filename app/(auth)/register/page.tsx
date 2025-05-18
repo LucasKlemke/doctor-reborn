@@ -210,9 +210,9 @@ export default function RegisterPage() {
                       <SelectValue placeholder="Selecione" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="PARENT">Pai</SelectItem>
-                      <SelectItem value="MOTHER">Mãe</SelectItem>
-                      <SelectItem value="OTHER">Outro responsável</SelectItem>
+                      <SelectItem value="father">Pai</SelectItem>
+                      <SelectItem value="mother">Mãe</SelectItem>
+                      <SelectItem value="other">Outro responsável</SelectItem>
                     </SelectContent>
                   </Select>
                   {errors.role && <p className="text-sm text-red-500">{errors.role}</p>}

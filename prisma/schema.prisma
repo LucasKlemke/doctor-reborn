@@ -14,17 +14,10 @@ model User {
   password  String
   name      String?
   age       Int
-  role      Role
+  role      String   @default("Other")
   babies    Baby[]
-  chats     Chat[]
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
-}
-
-enum Role {
-  PARENT
-  MOTHER
-  OTHER
 }
 
 model Baby {
@@ -37,7 +30,7 @@ model Baby {
   notes     String?
   gender    Gender   @default(OTHER)
   userId    String
-  user      User     @relation(fields: [userId], references: [id])
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
@@ -46,22 +39,4 @@ enum Gender {
   MALE
   FEMALE
   OTHER
-}
-
-model Chat {
-  id        String    @id @default(uuid())
-  createdAt DateTime  @default(now())
-  userId    String
-  user      User      @relation(fields: [userId], references: [id])
-  messages  Message[]
-}
-
-model Message {
-  id        String   @id @default(uuid())
-  content   String
-  role      String
-  tokens    Int
-  chatId    String
-  chat      Chat     @relation(fields: [chatId], references: [id])
-  createdAt DateTime @default(now())
 }

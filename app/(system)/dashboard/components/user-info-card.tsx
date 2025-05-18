@@ -1,7 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { useBabies } from '@/stores/baby'
 import { User } from '@prisma/client'
-import { BabyIcon, Mail, UserIcon } from 'lucide-react'
+import { BabyIcon, Mail, PersonStanding, UserIcon } from 'lucide-react'
 
 const UserInforCard = ({ user }: { user: User }) => {
   const babies = useBabies()
@@ -24,6 +24,15 @@ const UserInforCard = ({ user }: { user: User }) => {
             Email -
           </span>
           <span className="text-sm text-gray-500">{user.email}</span>
+        </div>
+        <div className="flex items-center gap-x-3">
+          <span className="flex items-center gap-2 text-sm">
+            <PersonStanding className="h-4 w-4" />
+            Grau Parental -
+          </span>
+          <span className="text-sm text-gray-500">
+            {user.role === 'father' ? 'Pai' : user.role === 'mother' ? 'Mãe' : 'Outro'}
+          </span>
         </div>
 
         <div className="flex items-center gap-x-3">

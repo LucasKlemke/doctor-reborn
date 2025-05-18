@@ -152,7 +152,20 @@ const EditBabyFormButton = ({ baby }: { baby: Baby }) => {
                 <FormItem>
                   <FormLabel>Marca</FormLabel>
                   <FormControl>
-                    <Input placeholder="Marca (opcional)" {...field} />
+                    <Select onValueChange={field.onChange} value={field.value}>
+                      <SelectTrigger className="w-full">
+                        <SelectValue placeholder="Selecione a marca " />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="SkyNet">SkyNet</SelectItem>
+                        <SelectItem value="Stark Industries">Stark Industries</SelectItem>
+                        <SelectItem value="Wayne Biotech">Wayne Biotech</SelectItem>
+                        <SelectItem value="U.S.S. Callister Genetics">
+                          U.S.S. Callister Genetics
+                        </SelectItem>
+                        <SelectItem value="Outra">Outra</SelectItem>
+                      </SelectContent>
+                    </Select>
                   </FormControl>
                   <FormMessage />
                 </FormItem>
