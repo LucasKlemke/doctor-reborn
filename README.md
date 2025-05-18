@@ -86,13 +86,27 @@ Transforma ideias insanas em código funcional. É o cérebro por trás da engen
    NEXTAUTH_URL=http://localhost:3000
    ```
 
-4. **Rode o projeto**
+4. **Gere os arquivos do Prisma**
+   
+   Após configurar o `.env`, execute:
+
+   ```bash
+   npx prisma generate
+   ```
+
+   Se desejar criar e aplicar as migrações do banco de dados, rode:
+
+   ```bash
+   npx prisma migrate dev
+   ```
+
+5. **Rode o projeto**
 
    ```bash
    pnpm dev
    ```
 
-5. **Acesse**
+6. **Acesse**
    ```
    http://localhost:3000
    ```
