@@ -43,8 +43,10 @@ const RemoveBabyDialog = ({ selectedBaby }: { selectedBaby: Baby }) => {
         <DialogHeader>
           <DialogTitle>Confirmar exclusão</DialogTitle>
           <DialogDescription>
-            Tem certeza que deseja remover {selectedBaby?.name} da sua lista? Esta ação não pode ser
-            desfeita.
+            Você está prestes a apagar {selectedBaby?.name} da sua{' '}
+            <span className="text-primary">base familiar rebornológica.</span> Essa decisão é
+            definitiva e não poderá ser desfeita nem com{' '}
+            <span className="text-primary">cola quente.</span>
           </DialogDescription>
         </DialogHeader>
         <DialogFooter>

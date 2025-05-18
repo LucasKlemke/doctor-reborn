@@ -72,7 +72,7 @@ const NewBabyFormButton = () => {
       setOpen(false)
       toast('Novo bebê adicionado com sucesso!')
     } catch (e) {
-      toast('Erro ao adicionar bebê')
+      toast('Erro ao adicionar prole neomodular sintética.')
       console.error(e)
     }
     setIsLoading(false)
@@ -85,14 +85,14 @@ const NewBabyFormButton = () => {
       <DialogTrigger onClick={() => setOpen(true)} asChild>
         <Button className="gap-2">
           <Plus className="h-4 w-4" />
-          Adicionar bebê
+          Adicionar Bebê
         </Button>
       </DialogTrigger>
       <DialogContent>
         <DialogHeader>
-          <DialogTitle>Adicionar novo dependente</DialogTitle>
+          <DialogTitle>Inclusão de novo membro da prole sintética</DialogTitle>
           <DialogDescription>
-            Preencha as informações do bebê para adicioná-lo à sua lista.
+            Insira os dados neonatoplásticos do seu bebê para registro na plataforma.
           </DialogDescription>
         </DialogHeader>
         <Form {...form}>
@@ -200,7 +200,7 @@ const NewBabyFormButton = () => {
               )}
             />
             <Button disabled={isLoading} type="submit">
-              {isLoading ? 'Adicionando...' : 'Adicionar bebê'}
+              {isLoading ? 'Adicionando...' : 'Adicionar'}
             </Button>
           </form>
         </Form>

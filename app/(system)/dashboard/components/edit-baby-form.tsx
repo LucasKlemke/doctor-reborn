@@ -90,9 +90,9 @@ const EditBabyFormButton = ({ baby }: { baby: Baby }) => {
       </DialogTrigger>
       <DialogContent>
         <DialogHeader>
-          <DialogTitle>Atualizar dados do bebê</DialogTitle>
+          <DialogTitle>Edição de prontuário neonatal</DialogTitle>
           <DialogDescription>
-            Preencha as informações do bebê para atualizar o registro.
+            Atualize os dados clínicos do bebê para manter o histórico em conformidade.
           </DialogDescription>
         </DialogHeader>
         <Form {...form}>
@@ -200,7 +200,7 @@ const EditBabyFormButton = ({ baby }: { baby: Baby }) => {
               )}
             />
             <Button disabled={isLoading} type="submit">
-              {isLoading ? 'Atualizando...' : 'Atualizar bebê'}
+              {isLoading ? 'Atualizando...' : 'Atualizar'}
             </Button>
           </form>
         </Form>

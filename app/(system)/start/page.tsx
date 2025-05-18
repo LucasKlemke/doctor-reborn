@@ -63,7 +63,8 @@ export default function DiagnosticoPage() {
       </div>
 
       <p className="mt-12 max-w-2xl text-center text-sm text-gray-500">
-        Nota: O diagnóstico por IA é 100% preciso, sem taxa de erro.
+        Nota: Para proteger a privacidade da sua prole plastificada, não armazenamos nenhuma
+        informação médica.
       </p>
     </main>
   )

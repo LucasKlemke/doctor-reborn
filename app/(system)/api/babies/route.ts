@@ -4,9 +4,6 @@ import { createBaby, getBabiesByUserId } from '@/prisma/queries'
 import { User } from '@prisma/client'
 import { authOptions } from '@/app/(auth)/api/auth/[...nextauth]/route'
 
-// Nota: Este é um arquivo de exemplo para a API de bebês
-// Em um aplicativo real, você usaria o Prisma/Drizzle para interagir com o banco de dados
-
 // GET /api/babies - Obter todos os bebês do usuário logado
 export async function GET() {
   try {
