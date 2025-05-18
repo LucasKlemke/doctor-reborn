@@ -28,8 +28,7 @@ Transforma ideias insanas em código funcional. É o cérebro por trás da engen
 - **RF02**: CRUD para gerenciamento de Bebês Reborn (dependentes).
 - **RF03**: Permitir upload de imagem de um Bebê Reborn para análise.
 - **RF04**: Processar a imagem e retornar um "diagnóstico clínico" via chat com LLM.
-- **RF05**: Exibir frases automáticas depreciando a aparência do bebê (modo gratuito).
-- **RF06**: Direcionamento para atendimento via WhatsApp para consultas especializadas.
+- **RF05**: Direcionamento para atendimento via WhatsApp para consultas especializadas.
 
 ---
 
