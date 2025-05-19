@@ -1,6 +1,9 @@
 # 🥇 1º Lugar Hackathon Codecon Universe 18/05/2025
 **Codecon Universe** é um hackathon promovido pela comunidade Codecon, voltado para programadores de todo o Brasil. A edição de 2025 teve como tema "Ideias inúteis e coisas que ninguém precisa", desafiando os participantes a explorarem a criatividade sem limites e criarem projetos absurdamente geniais. 
 
+## 🎥 Vídeo de apresentação (Youtube)
+https://www.youtube.com/watch?v=b8nZ-fH-l7Q
+
 
 ## 🧸 Doctor Reborn — Diagnóstico IA para Bebês Reborn
 
