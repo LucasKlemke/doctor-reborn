@@ -1,4 +1,11 @@
-# 🧸 Doctor Reborn — Diagnóstico IA para Bebês Reborn
+# 🥇 1º Lugar Hackathon Codecon Universe 18/05/2025
+**Codecon Universe** é um hackathon promovido pela comunidade Codecon, voltado para programadores de todo o Brasil. A edição de 2025 teve como tema "Ideias inúteis e coisas que ninguém precisa", desafiando os participantes a explorarem a criatividade sem limites e criarem projetos absurdamente geniais. 
+
+## 🎥 Vídeo de apresentação (Youtube)
+https://www.youtube.com/watch?v=b8nZ-fH-l7Q
+
+
+## 🧸 Doctor Reborn — Diagnóstico IA para Bebês Reborn
 
 > **Aviso Legal:** Este projeto foi criado para fins de demonstração e não deve ser utilizado como fonte médica real. Bebês Reborn não necessitam de atendimento clínico. Ainda.
 
@@ -15,10 +22,12 @@ O **Doctor Reborn** é uma plataforma de diagnóstico médico assistido por IA, 
 **Gabriel Horner**
 Designer de Experiências e Estrategista Criativo
 Responsável por toda a camada visual e emocional do projeto. Garante que cada pixel tenha um propósito (mesmo que inútil) e que a jornada do usuário seja esteticamente absurda.
+Linkedin: https://www.linkedin.com/in/gabriel-luis-horner-201337151/
 
 **Lucas Klemke**
 Desenvolvedor Fullstack e Executor Técnico
 Transforma ideias insanas em código funcional. É o cérebro por trás da engenharia que faz diagnósticos clínicos em bonecos de plástico com seriedade hospitalar.
+Linkedin: https://www.linkedin.com/in/lucasklemke/
 
 ---
 
@@ -75,7 +84,6 @@ Transforma ideias insanas em código funcional. É o cérebro por trás da engen
    Crie o arquivo com as variáveis necessárias:
 
    ```env
-   # chave sandbox para Codecon Testar esta no final do input About the project dentro da aba Project Details do formulário de envio
 
    OPENAI_API_KEY=
 
