@@ -1,4 +1,8 @@
-# 🧸 Doctor Reborn — Diagnóstico IA para Bebês Reborn
+# 🥇 1º Lugar Hackathon Codecon Universe 18/05/2025
+**Codecon Universe** é um hackathon promovido pela comunidade Codecon, voltado para programadores de todo o Brasil. A edição de 2025 teve como tema "Ideias inúteis e coisas que ninguém precisa", desafiando os participantes a explorarem a criatividade sem limites e criarem projetos absurdamente geniais. 
+
+
+## 🧸 Doctor Reborn — Diagnóstico IA para Bebês Reborn
 
 > **Aviso Legal:** Este projeto foi criado para fins de demonstração e não deve ser utilizado como fonte médica real. Bebês Reborn não necessitam de atendimento clínico. Ainda.
 
