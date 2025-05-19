@@ -82,7 +82,6 @@ Transforma ideias insanas em código funcional. É o cérebro por trás da engen
    Crie o arquivo com as variáveis necessárias:
 
    ```env
-   # chave sandbox para Codecon Testar esta no final do input About the project dentro da aba Project Details do formulário de envio
 
    OPENAI_API_KEY=
 
