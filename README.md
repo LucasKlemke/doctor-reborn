@@ -87,11 +87,15 @@ Linkedin: https://www.linkedin.com/in/lucasklemke/
 
    OPENAI_API_KEY=
 
-   DATABASE_URL="file:./dev.db"
+   DATABASE_URL=""your_supabase_project_url""
 
    NEXTAUTH_SECRET=ouwAFDvipk5n7kLU5IqXIwxfDh0xkenB/jqF9FaYiG8=
 
    NEXTAUTH_URL=http://localhost:3000
+
+   NEXT_PUBLIC_SUPABASE_URL=
+   
+   NEXT_PUBLIC_SUPABASE_ANON_KEY=
    ```
 
 4. **Gere os arquivos do Prisma**

@@ -1,12 +1,6 @@
 import { PrismaClient, User, Baby } from '@prisma/client'
 
-const prisma = new PrismaClient()
-
-// Bom, só para contexto, eu ( Lucas ) acabei não usando tudo o que ta aqui,
-// mas deixei com a justificativa que se eu for escalar, ja tem coisa pronta aqui.
-
-// Jaja vou dormir, espero que tenha alguém lendo aqui, se tiver, um beijo e um abraço.
-
+import { prisma } from '@/lib/prisma'
 
 // --- Baby CRUD ---
 export const createBaby = (data: Omit<Baby, 'id' | 'createdAt' | 'updatedAt'>) =>
