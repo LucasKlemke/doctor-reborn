@@ -78,7 +78,7 @@ export default function DiagnosticoPage() {
       )}
 
       <div className="grid w-full max-w-4xl grid-cols-1 gap-8 md:grid-cols-2">
-        <LlmCard handleStartChat={handleStartChat} />
+        <LlmCard isCreatingCheckout={isCreatingCheckout} handleStartChat={handleStartChat} />
         <ContactCard />
       </div>
 

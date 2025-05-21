@@ -2,7 +2,13 @@
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
 
-const LlmCard = ({ handleStartChat }: { handleStartChat: (testeId: string) => void }) => {
+const LlmCard = ({
+  handleStartChat,
+  isCreatingCheckout,
+}: {
+  isCreatingCheckout: boolean
+  handleStartChat: (testeId: string) => void
+}) => {
   return (
     <Card
       onClick={() => handleStartChat('123')}
@@ -18,7 +24,7 @@ const LlmCard = ({ handleStartChat }: { handleStartChat: (testeId: string) => vo
         </p>
       </CardContent>
       <CardFooter className="flex w-full justify-center">
-        <Button className="p-6 text-xl" size={'lg'}>
+        <Button disabled={isCreatingCheckout} className="p-6 text-xl" size={'lg'}>
           Iniciar {`(R$5,00)`}
         </Button>
       </CardFooter>

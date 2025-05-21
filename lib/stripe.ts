@@ -5,7 +5,7 @@ if (!process.env.STRIPE_SECRET_KEY) {
 }
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY, {
-  // @ts-ignore
+  // @ts-expect-error Type '"2024-09-30.acacia"' is not assignable to type '"2025-04-30.basil"'
   apiVersion: '2024-09-30.acacia',
 })
 

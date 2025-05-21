@@ -7,8 +7,8 @@ const secret = process.env.STRIPE_WEBHOOK_SECRET
 export async function POST(req: Request) {
   try {
     const body = await req.text()
-    // @ts-ignore
-    const signature = headers().get('stripe-signature')
+
+    const signature = (await headers()).get('stripe-signature')
 
     if (!secret || !signature) {
       throw new Error('Missing secret or signature')
