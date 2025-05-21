@@ -2,9 +2,10 @@
 
 import { useBabiesActions, useSelectedBaby } from '@/stores/baby'
 import { ArrowLeft } from 'lucide-react'
+import { loadStripe } from '@stripe/stripe-js'
 import Link from 'next/link'
 import { useRouter, useSearchParams } from 'next/navigation'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import LlmCard from './components/llm-card'
 import ContactCard from './components/contact-card'
 
@@ -15,6 +16,7 @@ export default function DiagnosticoPage() {
 
   const selectedBaby = useSelectedBaby()
   const { setSelectedBaby } = useBabiesActions()
+  const [isCreatingCheckout, setIsCreatingCheckout] = useState(false)
 
   useEffect(() => {
     const fetchBaby = async () => {
@@ -33,10 +35,28 @@ export default function DiagnosticoPage() {
     }
   }, [])
 
-  const handleStartChat = () => {
-    // Lógica para iniciar o chat com o bot
-    // Isso pode ser um redirecionamento ou abrir um modal, dependendo da sua implementação
-    router.push(`/chat?babyId=${selectedBaby?.id || babyId}`)
+  const handleStartChat = async (testeId: string) => {
+    try {
+      setIsCreatingCheckout(true)
+      const checkoutResponse = await fetch('/api/create-checkout', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ testeId, babyId }),
+      })
+
+      const stripeClient = await loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUB_KEY as string)
+
+      if (!stripeClient) throw new Error('Stripe failed to initialize.')
+
+      const { sessionId } = await checkoutResponse.json()
+      await stripeClient.redirectToCheckout({ sessionId })
+    } catch (error) {
+      console.error(error)
+    } finally {
+      setIsCreatingCheckout(false)
+    }
   }
 
   return (

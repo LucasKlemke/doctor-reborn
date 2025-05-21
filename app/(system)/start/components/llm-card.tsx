@@ -2,10 +2,10 @@
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
 
-const LlmCard = ({ handleStartChat }: { handleStartChat: () => void }) => {
+const LlmCard = ({ handleStartChat }: { handleStartChat: (testeId: string) => void }) => {
   return (
     <Card
-      onClick={handleStartChat}
+      onClick={() => handleStartChat('123')}
       className="hover:border-primary flex cursor-pointer flex-col justify-between border-2 transition-all hover:shadow-lg"
     >
       <CardHeader className="flex w-full items-center justify-between">
@@ -19,7 +19,7 @@ const LlmCard = ({ handleStartChat }: { handleStartChat: () => void }) => {
       </CardContent>
       <CardFooter className="flex w-full justify-center">
         <Button className="p-6 text-xl" size={'lg'}>
-          Iniciar
+          Iniciar {`(R$5,00)`}
         </Button>
       </CardFooter>
     </Card>
