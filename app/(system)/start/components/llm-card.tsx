@@ -23,10 +23,11 @@ const LlmCard = ({
           Anamnese feita por inteligência artificial treinada por especialistas em reborn.
         </p>
       </CardContent>
-      <CardFooter className="flex w-full justify-center">
+      <CardFooter className="flex w-full flex-col justify-center">
         <Button disabled={isCreatingCheckout} className="p-6 text-xl" size={'lg'}>
           Iniciar {`(R$5,00)`}
         </Button>
+      
       </CardFooter>
     </Card>
   )

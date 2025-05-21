@@ -83,8 +83,8 @@ export default function DiagnosticoPage() {
       </div>
 
       <p className="mt-12 max-w-2xl text-center text-sm text-gray-500">
-        Nota: Para proteger a privacidade da sua prole plastificada, não armazenamos nenhuma
-        informação médica.
+        Nota: Ao prosseguir, você está ciente de que está pagando por uma brincadeira sem valor
+        real.
       </p>
     </main>
   )
