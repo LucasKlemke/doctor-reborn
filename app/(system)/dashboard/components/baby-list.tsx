@@ -22,7 +22,7 @@ const BabyList = () => {
         </div>
       ) : (
         <div className="space-y-4">
-          {babies.map((baby) => (
+          {babies?.map((baby) => (
             <BabyListItem key={baby.id} baby={baby} />
           ))}
         </div>

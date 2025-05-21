@@ -6,7 +6,7 @@ import Link from 'next/link'
 const ContactCard = () => {
   return (
     <Link
-      href={`https://wa.me/+554796589979?text=${encodeURIComponent('Olá, doutor(a)!\nPreciso de ajuda com meu filho(a). Você poderia me orientar, por favor?\nAgradeço desde já pela atenção.')}`}
+      href={`https://www.youtube.com/watch?v=JnbV_kcrGF8`}
       target="_blank"
       rel="noopener noreferrer"
     >
