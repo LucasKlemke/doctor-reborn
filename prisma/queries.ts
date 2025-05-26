@@ -34,4 +34,6 @@ export const updateUser = (
 
 export const deleteUser = (id: string) => prisma.user.delete({ where: { id } })
 
+export const deleteUserByEmail = (email: string) => prisma.user.delete({ where: { email } })
+
 export const listUsers = () => prisma.user.findMany()
