@@ -35,18 +35,24 @@ describe('CRUD de Bebês', () => {
 
     // Aguarda sucesso (ajuste mensagem se necessário)
     cy.contains('Novo bebê adicionado com sucesso!').should('exist')
-    cy.contains('Baby Teste').should('exist')
+
+    // Verifica se o card do bebê foi criado e se as informações estão corretas
+    cy.contains('h3', 'Baby Teste')
+      .parents('.p-6')
+      .within(() => {
+        cy.contains('Sexo').parent().find('p').should('have.text', 'Macho')
+        cy.contains('Peso').parent().find('p').should('have.text', '3.5g')
+        cy.contains('Tamanho').parent().find('p').should('have.text', '50cm')
+        cy.contains('Nascimento').parent().find('p').should('have.text', '01/01/2023')
+      })
   })
 
   it('Deve editar um bebê', () => {
-    cy.visit('/bebes') // ajuste a rota conforme sua aplicação
-
     // Encontra o card do bebê "Baby Teste" pelo título (h3)
     cy.contains('h3', 'Baby Teste')
       .parents('.p-6') // classe do Card, ajusta se necessário
       .within(() => {
-        // Clica no botão de editar
-        cy.get('button').contains('svg').next().click({ force: true }) // pega o EditBabyFormButton, pode ser só cy.get('button').eq(1).click({force:true}) se for o 2° botão
+        cy.get('[data-id="edit-baby-button"]').click({ force: true })
       })
 
     // Troca o nome do bebê no modal de edição
@@ -62,9 +68,19 @@ describe('CRUD de Bebês', () => {
 
   it('Deve deletar um bebê', () => {
     cy.visit('/dashboard')
-    cy.contains('Baby Editado').parents('[data-baby-id]').find('button').contains('Deletar').click()
+    cy.contains('h3', 'Baby Editado')
+      .parents('.p-6') // classe do Card, ajusta se necessário
+      .within(() => {
+        cy.get('[data-id="remove-baby-modal-button"]').click({ force: true })
+      })
+
+    cy.contains('Confirmar exclusão').should('exist')
+
+    cy.contains('Cancelar').click() // Cancela a deleção
     // Confirme o modal de deleção, se existir
-    cy.contains('Confirmar').click()
+    cy.get('[data-id="remove-baby-confirm-button"]').click({ force: true })
     cy.contains('Baby Editado').should('not.exist')
+    // Bebê removido com sucesso
+    cy.contains('Bebê removido com sucesso!').should('exist')
   })
 })

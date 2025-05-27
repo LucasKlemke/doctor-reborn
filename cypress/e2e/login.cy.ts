@@ -1,3 +1,4 @@
+import '@cypress/code-coverage/support'
 describe('Login', () => {
   it('Deve permitir login com usuário válido', () => {
     cy.visit('/signin')
