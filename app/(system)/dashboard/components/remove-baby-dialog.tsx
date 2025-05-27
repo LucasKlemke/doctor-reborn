@@ -36,7 +36,7 @@ const RemoveBabyDialog = ({ selectedBaby }: { selectedBaby: Baby }) => {
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger onClick={() => setOpen(true)} asChild>
         <Button size={'icon'} variant={'destructive'} className="gap-2">
-          <Trash className="h-4 w-4" />
+          <Trash data-id="remove-baby-modal-button" className="h-4 w-4" />
         </Button>
       </DialogTrigger>
       <DialogContent>
@@ -53,7 +53,7 @@ const RemoveBabyDialog = ({ selectedBaby }: { selectedBaby: Baby }) => {
           <Button variant="outline" onClick={() => setOpen(false)}>
             Cancelar
           </Button>
-          <Button variant="destructive" onClick={handleSubmit} disabled={isLoading}>
+          <Button data-id={'remove-baby-confirm-button'} variant="destructive" onClick={handleSubmit} disabled={isLoading}>
             {isLoading ? 'Removendo...' : 'Remover bebê'}
           </Button>
         </DialogFooter>
