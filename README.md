@@ -1,90 +1,90 @@
-# 🥇 1º Lugar Hackathon Codecon Universe 18/05/2025
-**Codecon Universe** é um hackathon promovido pela comunidade Codecon, voltado para programadores de todo o Brasil. A edição de 2025 teve como tema "Ideias inúteis e coisas que ninguém precisa", desafiando os participantes a explorarem a criatividade sem limites e criarem projetos absurdamente geniais. 
+# 🥇 1st Place Hackathon Codecon Universe 05/18/2025
+**Codecon Universe** is a hackathon promoted by the Codecon community, aimed at programmers from all over Brazil. The 2025 edition had the theme *“Useless ideas and things nobody needs”*, challenging participants to unleash unlimited creativity and build absurdly brilliant projects.  
 
-## 🎥 Vídeo de apresentação (Youtube)
-https://www.youtube.com/watch?v=b8nZ-fH-l7Q
-
-
-## 🧸 Doctor Reborn — Diagnóstico IA para Bebês Reborn
-
-> **Aviso Legal:** Este projeto foi criado para fins de demonstração e não deve ser utilizado como fonte médica real. Bebês Reborn não necessitam de atendimento clínico. Ainda.
+## 🎥 Presentation Video (YouTube)  
+https://www.youtube.com/watch?v=b8nZ-fH-l7Q  
 
 ---
 
-## 🩺 Descrição do Projeto
+## 🧸 Doctor Reborn — AI Diagnosis for Reborn Babies  
 
-O **Doctor Reborn** é uma plataforma de diagnóstico médico assistido por IA, dedicada exclusivamente à saúde de Bebês Reborn. Através de uma interface intuitiva, pais autenticados podem gerenciar seus dependentes com um CRUD completo, e obter diagnósticos estéticos e clínicos imediatos através de um chat inteligente. Use a funcionalidade de upload de imagens para análise com LLM, ou opte pelo atendimento via WhatsApp para uma consulta mais personalizada.
-
----
-
-## 👨‍💻👨‍💻 Membros responsávies
-
-**Gabriel Horner**
-Designer de Experiências e Estrategista Criativo
-Responsável por toda a camada visual e emocional do projeto. Garante que cada pixel tenha um propósito (mesmo que inútil) e que a jornada do usuário seja esteticamente absurda.
-Linkedin: https://www.linkedin.com/in/gabriel-luis-horner-201337151/
-
-**Lucas Klemke**
-Desenvolvedor Fullstack e Executor Técnico
-Transforma ideias insanas em código funcional. É o cérebro por trás da engenharia que faz diagnósticos clínicos em bonecos de plástico com seriedade hospitalar.
-Linkedin: https://www.linkedin.com/in/lucasklemke/
+> **Legal Disclaimer:** This project was created for demonstration purposes only and should not be used as a real medical source. Reborn babies do not require clinical care. Yet.  
 
 ---
 
-## ✅ Requisitos Funcionais (RF)
+## 🩺 Project Description  
 
-- **RF01**: Permitir o cadastro e autenticação de pais.
-- **RF02**: CRUD para gerenciamento de Bebês Reborn (dependentes).
-- **RF03**: Permitir upload de imagem de um Bebê Reborn para análise.
-- **RF04**: Processar a imagem e retornar um "diagnóstico clínico" via chat com LLM.
-- **RF05**: Direcionamento para atendimento via WhatsApp para consultas especializadas.
+**Doctor Reborn** is an AI-assisted medical diagnosis platform, dedicated exclusively to the health of Reborn Babies. Through an intuitive interface, authenticated parents can manage their dependents with full CRUD functionality, and obtain immediate esthetic and clinical diagnoses through an intelligent chat. Use the image upload feature for LLM analysis, or choose WhatsApp consultation for a more personalized service.  
 
 ---
 
-## 🚫 Requisitos Não Funcionais (RNF)
+## 👨‍💻👨‍💻 Team Members  
 
-- **RNF01**: O sistema deve estar disponível 99,9% do tempo (exceto em fases lunares específicas).
-- **RNF02**: O tempo de resposta da IA não pode exceder 5 segundos.
-- **RNF03**: A aplicação deve ser compatível com dispositivos móveis.
-- **RNF04**: Toda comunicação deve simular extrema seriedade médica.
-- **RNF05**: O código deve ser modular e de fácil manutenção para futuras síndromes simuladas.
-- **RNF06**: A aplicação deve utilizar Next.js com renderização server-side para diagnósticos "em tempo quase real".
-- **RNF07**: O sistema deve simular ética médica mesmo que a base legal seja inexistente.
+**Gabriel Horner**  
+Experience Designer & Creative Strategist  
+Responsible for the entire visual and emotional layer of the project. Ensures that every pixel has a purpose (even if useless) and that the user journey is aesthetically absurd.  
+LinkedIn: https://www.linkedin.com/in/gabriel-luis-horner-201337151/  
 
----
-
-## 🧱 Stack Utilizada
-
-- [x] **Next.js**
-- [x] **TailwindCSS + Shadcn UI**
-- [x] **TypeScript**
-- [x] **Prisma (ORM)**
-- [x] **SQLite Local**
-- [x] **Zustand** (para persistência global do estado clínico)
-- [x] **LLM com suporte a upload de imagens**
+**Lucas Klemke**  
+Fullstack Developer & Technical Executor  
+Transforms insane ideas into functional code. He is the brain behind the engineering that delivers clinical diagnoses on plastic dolls with hospital-level seriousness.  
+LinkedIn: https://www.linkedin.com/in/lucasklemke/  
 
 ---
 
-## 🚀 Como Rodar o Projeto
+## ✅ Functional Requirements (FR)  
 
-1. **Clone o repositório**
+- **FR01**: Allow parent registration and authentication.  
+- **FR02**: CRUD for managing Reborn Babies (dependents).  
+- **FR03**: Allow image upload of a Reborn Baby for analysis.  
+- **FR04**: Process the image and return a “clinical diagnosis” via LLM-powered chat.  
+- **FR05**: Redirect to WhatsApp consultation for specialized services.  
+
+---
+
+## 🚫 Non-Functional Requirements (NFR)  
+
+- **NFR01**: The system must be available 99.9% of the time (except during specific lunar phases).  
+- **NFR02**: AI response time must not exceed 5 seconds.  
+- **NFR03**: The application must be mobile-compatible.  
+- **NFR04**: All communication must simulate extreme medical seriousness.  
+- **NFR05**: Code must be modular and easy to maintain for future simulated syndromes.  
+- **NFR06**: The application must use Next.js with server-side rendering for “almost real-time” diagnoses.  
+- **NFR07**: The system must simulate medical ethics even if no legal basis exists.  
+
+---
+
+## 🧱 Tech Stack  
+
+- [x] **Next.js**  
+- [x] **TailwindCSS + Shadcn UI**  
+- [x] **TypeScript**  
+- [x] **Prisma (ORM)**  
+- [x] **Local SQLite**  
+- [x] **Zustand** (for global persistence of clinical state)  
+- [x] **LLM with image upload support**  
+
+---
+
+## 🚀 How to Run the Project  
+
+1. **Clone the repository**  
 
    ```bash
-   git clone https://github.com/seuusuario/doctor_reborn.git
+   git clone https://github.com/youruser/doctor_reborn.git
    cd doctor_reborn
    ```
 
-2. **Instale as dependências**
+2. **Install dependencies**  
 
    ```bash
    pnpm install
    ```
 
-3. **Configure o arquivo `.env`**
-   Crie o arquivo com as variáveis necessárias:
+3. **Configure the `.env` file**  
+   Create the file with the required variables:  
 
    ```env
-
    OPENAI_API_KEY=
 
    DATABASE_URL=""your_supabase_project_url""
@@ -94,46 +94,46 @@ Linkedin: https://www.linkedin.com/in/lucasklemke/
    NEXTAUTH_URL=http://localhost:3000
 
    NEXT_PUBLIC_SUPABASE_URL=
-   
+
    NEXT_PUBLIC_SUPABASE_ANON_KEY=
    ```
 
-4. **Gere os arquivos do Prisma**
-   
-   Após configurar o `.env`, execute:
+4. **Generate Prisma files**  
+
+   After setting up `.env`, run:  
 
    ```bash
    npx prisma generate
    ```
 
-   Se desejar criar e aplicar as migrações do banco de dados, rode:
+   If you want to create and apply database migrations, run:  
 
    ```bash
    npx prisma migrate dev
    ```
 
-5. **Rode o projeto**
+5. **Run the project**  
 
    ```bash
    pnpm dev
    ```
 
-6. **Acesse**
+6. **Access**  
    ```
    http://localhost:3000
    ```
 
 ---
 
-## 💡 Features Futuras
+## 💡 Future Features  
 
-- Diagnóstico por áudio do choro reborn.
-- Certificado digital de nascimento rebornológico.
-- Integração com funerárias e partos simulados.
-- Modo multiplayer: competições de “reborn mais feio”.
+- Diagnosis by analyzing reborn baby crying audio.  
+- Digital certificate of rebornological birth.  
+- Integration with funeral homes and simulated births.  
+- Multiplayer mode: competitions for “ugliest reborn baby.”  
 
 ---
 
-## 🤡 Por que isso é gloriosamente inútil?
+## 🤡 Why is this gloriously useless?  
 
-Porque ninguém _em sã consciência_ gastaria dinheiro com diagnósticos médicos para um objeto de vinil. Eu acho.
+Because nobody *in their right mind* would pay for medical diagnoses on a vinyl doll. I think.  
