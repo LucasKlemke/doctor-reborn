@@ -41,7 +41,9 @@ const BabyListItem = ({ baby }: { baby: Baby }) => {
 
         <div className="text-right">
           <span className="text-sm text-gray-500">Nascimento</span>
-          <p className="text-sm">{new Date(baby.birthDate).toLocaleDateString('pt-BR')}</p>
+          <p className="text-sm">
+            {new Date(baby.birthDate).toLocaleDateString('pt-BR', { timeZone: 'UTC' })}
+          </p>
         </div>
       </div>
 

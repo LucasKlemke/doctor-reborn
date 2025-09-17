@@ -85,7 +85,7 @@ const EditBabyFormButton = ({ baby }: { baby: Baby }) => {
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger onClick={() => setOpen(true)} asChild>
         <Button variant="secondary" className="gap-2" size={'icon'}>
-          <Pencil className="h-4 w-4" />
+          <Pencil data-id='edit-baby-button' className="h-4 w-4" />
         </Button>
       </DialogTrigger>
       <DialogContent>
